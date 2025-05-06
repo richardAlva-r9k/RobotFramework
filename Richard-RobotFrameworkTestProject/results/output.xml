@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-06T15:54:53.805664" rpa="false" schemaversion="5">
+<suite id="s1" name="RobotFrameworkTestProject" source="D:\Rail9000\RobotFramework\RobotFrameworkTestProject">
+<suite id="s1-s1" name="Tests" source="D:\Rail9000\RobotFramework\RobotFrameworkTestProject\Tests">
+<suite id="s1-s1-s1" name="Valid Login" source="D:\Rail9000\RobotFramework\RobotFrameworkTestProject\Tests\valid_login.robot">
+<test id="s1-s1-s1-t1" name="Login with Valid Credentials" line="8">
+<kw name="Open Browser to Login Page" owner="resource">
+<kw name="Open Url With Edge" owner="resource">
+<kw name="Open Url" owner="resource">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-05-06T15:54:54.119709" level="INFO">Creating an instance of the Edge WebDriver.</msg>
+<arg>${browser}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-05-06T15:54:54.119418" elapsed="1.324359"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-06T15:54:55.444672" elapsed="0.050655"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-05-06T15:54:55.496175" level="INFO">Opening url 'http://127.0.0.1.nip.io/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-05-06T15:54:55.495630" elapsed="1.339111"/>
+</kw>
+<kw name="Wait For Condition" owner="SeleniumLibrary">
+<arg>return !!document.body</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" start="2025-05-06T15:54:56.835061" elapsed="0.014099"/>
+</kw>
+<arg>Edge</arg>
+<arg>${url}</arg>
+<status status="PASS" start="2025-05-06T15:54:54.118612" elapsed="2.730854"/>
+</kw>
+<arg>${url}</arg>
+<status status="PASS" start="2025-05-06T15:54:54.118148" elapsed="2.731482"/>
+</kw>
+<kw name="Login Page Should Be Open" owner="resource">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-06T15:54:56.858729" level="INFO">Page title is 'Sign in to CSX CoreSystem'.</msg>
+<arg>Sign in to CSX CoreSystem</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-05-06T15:54:56.850491" elapsed="0.009002"/>
+</kw>
+<status status="PASS" start="2025-05-06T15:54:56.849865" elapsed="0.009893"/>
+</kw>
+<arg>${LOGIN_URL}</arg>
+<status status="PASS" start="2025-05-06T15:54:54.117444" elapsed="2.742499"/>
+</kw>
+<kw name="Input Username" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-06T15:54:56.862626" level="INFO">Typing text 'supervisor' into text field 'username'.</msg>
+<arg>username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-06T15:54:56.861684" elapsed="0.086874"/>
+</kw>
+<arg>${VALID_USERNAME}</arg>
+<status status="PASS" start="2025-05-06T15:54:56.860723" elapsed="0.088067"/>
+</kw>
+<kw name="Input Password" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-06T15:54:56.950815" level="INFO">Typing text 'supervisor' into text field 'password'.</msg>
+<arg>password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-06T15:54:56.950062" elapsed="0.092279"/>
+</kw>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2025-05-06T15:54:56.949199" elapsed="0.093361"/>
+</kw>
+<kw name="Submit Credentials" owner="resource">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-06T15:54:57.044385" level="INFO">Clicking button 'kc-login'.</msg>
+<arg>kc-login</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-06T15:54:57.043887" elapsed="0.390545"/>
+</kw>
+<status status="PASS" start="2025-05-06T15:54:57.043227" elapsed="0.391543"/>
+</kw>
+<kw name="Welcome Page Should Be Open" owner="resource">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-06T15:54:58.738759" level="INFO">Current location is 'http://127.0.0.1.nip.io/'.</msg>
+<arg>${LOGIN_URL}</arg>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2025-05-06T15:54:57.436398" elapsed="1.303291"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-05-06T15:54:58.750106" level="INFO">Page title is 'Core System'.</msg>
+<arg>Core System</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-05-06T15:54:58.740137" elapsed="0.010804"/>
+</kw>
+<status status="PASS" start="2025-05-06T15:54:57.435398" elapsed="1.315827"/>
+</kw>
+<status status="PASS" start="2025-05-06T15:54:54.116286" elapsed="4.635532"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-06T15:54:58.753985" elapsed="2.204323"/>
+</kw>
+<doc>A test suite to check that CSX logs correctly.</doc>
+<meta name="Version">0.1</meta>
+<status status="PASS" start="2025-05-06T15:54:53.833742" elapsed="7.124733"/>
+</suite>
+<status status="PASS" start="2025-05-06T15:54:53.831134" elapsed="7.129503"/>
+</suite>
+<status status="PASS" start="2025-05-06T15:54:53.810070" elapsed="7.152418"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="RobotFrameworkTestProject" id="s1" pass="1" fail="0" skip="0">RobotFrameworkTestProject</stat>
+<stat name="Tests" id="s1-s1" pass="1" fail="0" skip="0">RobotFrameworkTestProject.Tests</stat>
+<stat name="Valid Login" id="s1-s1-s1" pass="1" fail="0" skip="0">RobotFrameworkTestProject.Tests.Valid Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
