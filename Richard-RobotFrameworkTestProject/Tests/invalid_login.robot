@@ -2,7 +2,7 @@
 Documentation    A test suite with different test cases depending on
 ...              the credentials used to login. All of them are incorrect
 ...              or empty.
-Resource    ../Resources/resource.resource
+Resource    ../Resources/browser.resource
 Suite Teardown    Close Browser
 Metadata         Version    0.1
 Test Template    Login With Invalid Credentials Should Fail

@@ -1,111 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-06T15:54:53.805664" rpa="false" schemaversion="5">
-<suite id="s1" name="RobotFrameworkTestProject" source="D:\Rail9000\RobotFramework\RobotFrameworkTestProject">
-<suite id="s1-s1" name="Tests" source="D:\Rail9000\RobotFramework\RobotFrameworkTestProject\Tests">
-<suite id="s1-s1-s1" name="Valid Login" source="D:\Rail9000\RobotFramework\RobotFrameworkTestProject\Tests\valid_login.robot">
-<test id="s1-s1-s1-t1" name="Login with Valid Credentials" line="8">
-<kw name="Open Browser to Login Page" owner="resource">
-<kw name="Open Url With Edge" owner="resource">
-<kw name="Open Url" owner="resource">
-<kw name="Create Webdriver" owner="SeleniumLibrary">
-<msg time="2025-05-06T15:54:54.119709" level="INFO">Creating an instance of the Edge WebDriver.</msg>
-<arg>${browser}</arg>
-<doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2025-05-06T15:54:54.119418" elapsed="1.324359"/>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-07T17:34:08.302133" rpa="false" schemaversion="5">
+<suite id="s1" name="Richard-RobotFrameworkTestProject" source="D:\Rail9000\RobotFramework\Richard-RobotFrameworkTestProject">
+<suite id="s1-s1" name="Tests" source="D:\Rail9000\RobotFramework\Richard-RobotFrameworkTestProject\Tests">
+<suite id="s1-s1-s1" name="Connect Database" source="D:\Rail9000\RobotFramework\Richard-RobotFrameworkTestProject\Tests\Connect Database.robot">
+<kw name="Set initial configuration" owner="initialConfiguration" type="SETUP">
+<kw name="Connect Users BBDD" owner="db">
+<kw name="Get Config" owner="ConfigReader">
+<msg time="2025-05-07T17:34:08.580881" level="INFO">${DBHost} = localhost</msg>
+<var>${DBHost}</var>
+<arg>host</arg>
+<arg>database</arg>
+<status status="PASS" start="2025-05-07T17:34:08.580217" elapsed="0.000926"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-05-06T15:54:55.444672" elapsed="0.050655"/>
+<kw name="Get Config" owner="ConfigReader">
+<msg time="2025-05-07T17:34:08.581903" level="INFO">${DBName} = users_csx</msg>
+<var>${DBName}</var>
+<arg>name</arg>
+<arg>database</arg>
+<status status="PASS" start="2025-05-07T17:34:08.581313" elapsed="0.000837"/>
 </kw>
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-05-06T15:54:55.496175" level="INFO">Opening url 'http://127.0.0.1.nip.io/'</msg>
-<arg>${url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-05-06T15:54:55.495630" elapsed="1.339111"/>
-</kw>
-<kw name="Wait For Condition" owner="SeleniumLibrary">
-<arg>return !!document.body</arg>
-<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
-<status status="PASS" start="2025-05-06T15:54:56.835061" elapsed="0.014099"/>
-</kw>
-<arg>Edge</arg>
-<arg>${url}</arg>
-<status status="PASS" start="2025-05-06T15:54:54.118612" elapsed="2.730854"/>
-</kw>
-<arg>${url}</arg>
-<status status="PASS" start="2025-05-06T15:54:54.118148" elapsed="2.731482"/>
-</kw>
-<kw name="Login Page Should Be Open" owner="resource">
-<kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-05-06T15:54:56.858729" level="INFO">Page title is 'Sign in to CSX CoreSystem'.</msg>
-<arg>Sign in to CSX CoreSystem</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-05-06T15:54:56.850491" elapsed="0.009002"/>
-</kw>
-<status status="PASS" start="2025-05-06T15:54:56.849865" elapsed="0.009893"/>
-</kw>
-<arg>${LOGIN_URL}</arg>
-<status status="PASS" start="2025-05-06T15:54:54.117444" elapsed="2.742499"/>
-</kw>
-<kw name="Input Username" owner="resource">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-06T15:54:56.862626" level="INFO">Typing text 'supervisor' into text field 'username'.</msg>
-<arg>username</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-06T15:54:56.861684" elapsed="0.086874"/>
-</kw>
-<arg>${VALID_USERNAME}</arg>
-<status status="PASS" start="2025-05-06T15:54:56.860723" elapsed="0.088067"/>
-</kw>
-<kw name="Input Password" owner="resource">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-05-06T15:54:56.950815" level="INFO">Typing text 'supervisor' into text field 'password'.</msg>
+<kw name="Get Config" owner="ConfigReader">
+<msg time="2025-05-07T17:34:08.582783" level="INFO">${DBPass} = ""</msg>
+<var>${DBPass}</var>
 <arg>password</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-06T15:54:56.950062" elapsed="0.092279"/>
+<arg>database</arg>
+<status status="PASS" start="2025-05-07T17:34:08.582421" elapsed="0.000579"/>
 </kw>
-<arg>${VALID_PASSWORD}</arg>
-<status status="PASS" start="2025-05-06T15:54:56.949199" elapsed="0.093361"/>
+<kw name="Get Config" owner="ConfigReader">
+<msg time="2025-05-07T17:34:08.583702" level="INFO">${DBPort} = 5432</msg>
+<var>${DBPort}</var>
+<arg>port</arg>
+<arg>database</arg>
+<status status="PASS" start="2025-05-07T17:34:08.583184" elapsed="0.000748"/>
 </kw>
-<kw name="Submit Credentials" owner="resource">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-05-06T15:54:57.044385" level="INFO">Clicking button 'kc-login'.</msg>
-<arg>kc-login</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-05-06T15:54:57.043887" elapsed="0.390545"/>
+<kw name="Get Config" owner="ConfigReader">
+<msg time="2025-05-07T17:34:08.584470" level="INFO">${DBUser} = postgres</msg>
+<var>${DBUser}</var>
+<arg>user</arg>
+<arg>database</arg>
+<status status="PASS" start="2025-05-07T17:34:08.584134" elapsed="0.000523"/>
 </kw>
-<status status="PASS" start="2025-05-06T15:54:57.043227" elapsed="0.391543"/>
+<kw name="Connect To Database" owner="DatabaseLibrary">
+<msg time="2025-05-07T17:34:08.585195" level="INFO">Looking for configuration file: 'resources\db.cfg'</msg>
+<msg time="2025-05-07T17:34:08.585521" level="INFO">Configuration file doesn't exist</msg>
+<msg time="2025-05-07T17:34:08.619313" level="INFO">Connect to DB using : psycopg2.connect(database='users_csx', user='postgres', password=***, host='localhost', port=5432)</msg>
+<arg>psycopg2</arg>
+<arg>${DBName}</arg>
+<arg>${DBUser}</arg>
+<arg>${DBPass}</arg>
+<arg>${DBHost}</arg>
+<arg>${DBPort}</arg>
+<doc>Creates a database connection using the DB API 2.0 ``db_module`` and the parameters provided.
+Along with listed commonly used arguments (`db_name`, `db_host` etc.)
+you can set any other DB module specific parameters as key/value pairs.</doc>
+<status status="PASS" start="2025-05-07T17:34:08.584801" elapsed="0.063699"/>
 </kw>
-<kw name="Welcome Page Should Be Open" owner="resource">
-<kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2025-05-06T15:54:58.738759" level="INFO">Current location is 'http://127.0.0.1.nip.io/'.</msg>
-<arg>${LOGIN_URL}</arg>
-<doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2025-05-06T15:54:57.436398" elapsed="1.303291"/>
+<status status="PASS" start="2025-05-07T17:34:08.579416" elapsed="0.069275"/>
 </kw>
-<kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-05-06T15:54:58.750106" level="INFO">Page title is 'Core System'.</msg>
-<arg>Core System</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-05-06T15:54:58.740137" elapsed="0.010804"/>
+<status status="PASS" start="2025-05-07T17:34:08.578936" elapsed="0.069847"/>
 </kw>
-<status status="PASS" start="2025-05-06T15:54:57.435398" elapsed="1.315827"/>
+<test id="s1-s1-s1-t1" name="Check database" line="11">
+<kw name="Query" owner="DatabaseLibrary">
+<msg time="2025-05-07T17:34:08.650112" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT * FROM usersessions;&lt;/code&gt;</msg>
+<msg time="2025-05-07T17:34:08.653358" level="INFO">Commit the transaction</msg>
+<msg time="2025-05-07T17:34:08.655801" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 4 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;session_id&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;user_id&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;role_id&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;status&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;start_date&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;end_date&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;access_token&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;access_token_expires_in&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;refresh_token&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;refresh_token_expires_in&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;numeric_id&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;idp_id&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;fee754cc-9de3-425b-919c-4601a27e09d3&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;supervisor&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;None&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;logging&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;None&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;None&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJYRk9VTHBUOU1YSDNxNm9jcWttYzFRLTIwV0J5U2hkZUYyQ3dhTVZST2xFIn0.eyJleHAiOjE3NDY1Mzk3MDIsImlhdCI6MTc0NjUzODgwMiwiYXV0aF90aW1lIjoxNzQ2NTM4ODAyLCJqdGkiOiI4ZDg3MzE5NC1kMGQxLTRmZDktYTE2OC1mMjliZDIyZmZiMTgiLCJpc3MiOiJodHRwOi8vMTI3LjAuMC4xLnNzbGlwLmlvL3JlYWxtcy9jc3gtY29yZXN5c3RlbSIsImF1ZCI6ImNzeC1jb3Jlc3lzdGVtIiwic3ViIjoiYWE5MDI3YWYtNTZmYy00YTVlLTlkMjAtMTAyZjIyYTYzMzIxIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiY3N4LWNvcmVzeXN0ZW0iLCJzaWQiOiJlMWVlYTk0Ni1lN2NmLTQ0MDQtYjVkYy05MjdkMTJmNTUwZTIiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiY2hpZWYtc3VwZXJ2aXNvciJdfSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInByZWZlcnJlZF91c2VybmFtZSI6InN1cGVydmlzb3IiLCJlbWFpbCI6InN1cGVydmlzb3JAY29yZXN5c3RlbS5jc3guY29tIn0.CBvGldOJVwLzVxipFK5l8pYsxdaEzFKh9M2A4Y4cUvEyV4iIZJ9gkxt_XRndC0QdqpOT_4KSCHnWYOyYWEQ1aCRS7sm2bvQRuLNQG3QRD3opsd-0C4sRikWk4eoaM96nbBHffyHcYccNekxZG3F4y6a1LkAk5GBgqadyfGPt9T4uFHzJb0butPbyloNx0GIoPtj2T9u2eOeOfTE9jViJSDFu7mS-XwHnJ1m1HWyjmraibN_KZbemiQUgBfU5_kVlfSh59JIy76UKLv-hxH4natX92Xek1kW-usA-ch6H-4bjuVXf_8SDa1dJdiYrXfC3E0Q_6QNGIgiKXzf0ZzFCtg&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1746539702374&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjYjE4ODAwZi00YWVkLTRkNTQtYjE3Mi1lNTFiM2I4ZjE2YzUifQ.eyJleHAiOjE3NDY1NDA2MDIsImlhdCI6MTc0NjUzODgwMiwianRpIjoiODkwODcyMmEtYTc1Ni00NWNjLTgxODktZjJhNzExNjk4M2NhIiwiaXNzIjoiaHR0cDovLzEyNy4wLjAuMS5zc2xpcC5pby9yZWFsbXMvY3N4LWNvcmVzeXN0ZW0iLCJhdWQiOiJodHRwOi8vMTI3LjAuMC4xLnNzbGlwLmlvL3JlYWxtcy9jc3gtY29yZXN5c3RlbSIsInN1YiI6ImFhOTAyN2FmLTU2ZmMtNGE1ZS05ZDIwLTEwMmYyMmE2MzMyMSIsInR5cCI6IlJlZnJlc2giLCJhenAiOiJjc3gtY29yZXN5c3RlbSIsInNpZCI6ImUxZWVhOTQ2LWU3Y2YtNDQwNC1iNWRjLTkyN2QxMmY1NTBlMiIsInNjb3BlIjoiYmFzaWMgYWNyIHByb2ZpbGUgd2ViLW9yaWdpbnMgZW1haWwifQ.ALMQjdIsXwhEdhhT4qzEOc_Obxi1XhK3j-0KpL43fVB9EKnwTSX4DHKzzaMsv0wBPAd8RDb7HJfFK4ykChBsWA&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1746540602374&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;5&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;e1eea946-e7cf-4404-b5dc-927d12f550e2&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;8138cba4-7312-463f-999c-e07c302dc870&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;supervisor&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;None&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;logging&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;None&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;None&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJYRk9VTHBUOU1YSDNxNm9jcWttYzFRLTIwV0J5U2hkZUYyQ3dhTVZST2xFIn0.eyJleHAiOjE3NDY1NDA1OTcsImlhdCI6MTc0NjUzOTY5NywiYXV0aF90aW1lIjoxNzQ2NTM5Njk3LCJqdGkiOiJkOTA3ODIxZi1lMTE3LTRmNGQtOWFhOC1mODk5N2IwOTg3ODEiLCJpc3MiOiJodHRwOi8vMTI3LjAuMC4xLnNzbGlwLmlvL3JlYWxtcy9jc3gtY29yZXN5c3RlbSIsImF1ZCI6ImNzeC1jb3Jlc3lzdGVtIiwic3ViIjoiYWE5MDI3YWYtNTZmYy00YTVlLTlkMjAtMTAyZjIyYTYzMzIxIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiY3N4LWNvcmVzeXN0ZW0iLCJzaWQiOiI4NjJjNjViZi1jNDIxLTRkZmMtYTY4ZC00ZTc4MmFjMmQ3ODAiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiY2hpZWYtc3VwZXJ2aXNvciJdfSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInByZWZlcnJlZF91c2VybmFtZSI6InN1cGVydmlzb3IiLCJlbWFpbCI6InN1cGVydmlzb3JAY29yZXN5c3RlbS5jc3guY29tIn0.YVlrfZFk_ID_xw05sHomhcQ_dJ06TBR4_oEq3pFN4hhgqRFFEriLH28TxhhlU-zs0Uc4EPsPnnjueQ_ZNwIlkzscY5Hr_t4ppZlerbzI0U-5EkyYpUUl1uGqiJ3Wdt4rgnMRNHM5KcF0QMa75chBrJzuh6djIu-yyGEtjmXOQ-Kk1CA8b1AU4Sq04oFtYTWwWgtaEuqFWK4nzIqH5nJXqAFlOHnz5HkxitkZBUFrepXDSM79QiQXEU4gM3KCJZgVhrsX09WNxsruLnmSHeQ0qcjaIVP_ogx_ex0cViYClDN8DOgbYmOmf3Feq0wDjXUu6KRifCurkQAKtQmlEpl4Vw&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1746540597388&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjYjE4ODAwZi00YWVkLTRkNTQtYjE3Mi1lNTFiM2I4ZjE2YzUifQ.eyJleHAiOjE3NDY1NDE0OTcsImlhdCI6MTc0NjUzOTY5NywianRpIjoiODRiZDFiYjAtOTEzOS00YTI1LThiZmMtYjkwYzViYTg1OGRlIiwiaXNzIjoiaHR0cDovLzEyNy4wLjAuMS5zc2xpcC5pby9yZWFsbXMvY3N4LWNvcmVzeXN0ZW0iLCJhdWQiOiJodHRwOi8vMTI3LjAuMC4xLnNzbGlwLmlvL3JlYWxtcy9jc3gtY29yZXN5c3RlbSIsInN1YiI6ImFhOTAyN2FmLTU2ZmMtNGE1ZS05ZDIwLTEwMmYyMmE2MzMyMSIsInR5cCI6IlJlZnJlc2giLCJhenAiOiJjc3gtY29yZXN5c3RlbSIsInNpZCI6Ijg2MmM2NWJmLWM0MjEtNGRmYy1hNjhkLTRlNzgyYWMyZDc4MCIsInNjb3BlIjoiYmFzaWMgYWNyIHByb2ZpbGUgd2ViLW9yaWdpbnMgZW1haWwifQ.-hby4noitpGO4mcRJmdosZYBcqqxfaa7zpXSZlYGw1j6tRWN0g59HVZQ0LkfXI9s0rTW4KuhhdUzj93G2k5OYg&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1746541497388&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;6&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;862c65bf-c421-4dfc-a68d-4e782ac2d780&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;2&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;53237e6c-909f-4c64-b86b-ecec4ad9a2bc&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;supervisor&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;chief-supervisor&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;logged&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1746534182658&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;None&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJYRk9VTHBUOU1YSDNxNm9jcWttYzFRLTIwV0J5U2hkZUYyQ3dhTVZST2xFIn0.eyJleHAiOjE3NDY1NDM1OTIsImlhdCI6MTc0NjU0MjY5MiwiYXV0aF90aW1lIjoxNzQ2NTM0MTc2LCJqdGkiOiI2YzFkMmU2MC05M2ZhLTRmN2UtOGE5NC1hODgxOTAzNTVjZTEiLCJpc3MiOiJodHRwOi8vMTI3LjAuMC4xLnNzbGlwLmlvL3JlYWxtcy9jc3gtY29yZXN5c3RlbSIsImF1ZCI6ImNzeC1jb3Jlc3lzdGVtIiwic3ViIjoiYWE5MDI3YWYtNTZmYy00YTVlLTlkMjAtMTAyZjIyYTYzMzIxIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiY3N4LWNvcmVzeXN0ZW0iLCJzaWQiOiI5ZmI4NTE0OC00Y2JiLTQ3NGEtYTBmNy1jYWI1NzJjMTdhMGIiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiY2hpZWYtc3VwZXJ2aXNvciJdfSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInByZWZlcnJlZF91c2VybmFtZSI6InN1cGVydmlzb3IiLCJlbWFpbCI6InN1cGVydmlzb3JAY29yZXN5c3RlbS5jc3guY29tIn0.Nc6ZuqSTD8xlvkpRpcQcPL0dhFAv2fWEzui9Vdr55tZG09ZmJ6l4AW_3oDDNQfjsMjOUhcNCVIv18AlS3DnXS7XQ8OkZizf94CEXOtlk9IICUwPtRrgUeO2QVbJf9aLK8coD6q_m9t76fnChq8MkikjsMaVQ_1FfZRhCjGXjFyJCVYacfd4JjUBv8KbzlFKLVIN8AC649o6dticRGR92y08YbzD4dXGkG0hzdEUT9g3fips2HNxkRoicgYUF3hJE6UoRIoBKdH-JqOjJ_wxqMF0ct7_uqNfhK99YcqH3Rd0m_lbfjzZgBXWpKDlVT4YCqA6mV_mX84maPYkZX_eS3A&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1746543592248&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjYjE4ODAwZi00YWVkLTRkNTQtYjE3Mi1lNTFiM2I4ZjE2YzUifQ.eyJleHAiOjE3NDY1NDQ0OTIsImlhdCI6MTc0NjU0MjY5MiwianRpIjoiNjdiNzg5YTAtZmRmNS00NzhhLWIxOGQtMTQzZWQ1N2IyMTlhIiwiaXNzIjoiaHR0cDovLzEyNy4wLjAuMS5zc2xpcC5pby9yZWFsbXMvY3N4LWNvcmVzeXN0ZW0iLCJhdWQiOiJodHRwOi8vMTI3LjAuMC4xLnNzbGlwLmlvL3JlYWxtcy9jc3gtY29yZXN5c3RlbSIsInN1YiI6ImFhOTAyN2FmLTU2ZmMtNGE1ZS05ZDIwLTEwMmYyMmE2MzMyMSIsInR5cCI6IlJlZnJlc2giLCJhenAiOiJjc3gtY29yZXN5c3RlbSIsInNpZCI6IjlmYjg1MTQ4LTRjYmItNDc0YS1hMGY3LWNhYjU3MmMxN2EwYiIsInNjb3BlIjoiYmFzaWMgYWNyIHByb2ZpbGUgd2ViLW9yaWdpbnMgZW1haWwifQ.O_tPLK23AKOnDASzaMTum5xmQTMS6swcolUXBtoyzRl5oqao4ogWtLFgW12mLU5ILE-9q_92-9TeHJo1f7WP8Q&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1746544492248&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;4&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;9fb85148-4cbb-474a-a0f7-cab572c17a0b&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;3&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;f6a480c8-6dbe-4abc-974a-9e7aa64fd8da&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;supervisor&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;None&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;logging&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;None&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;None&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJYRk9VTHBUOU1YSDNxNm9jcWttYzFRLTIwV0J5U2hkZUYyQ3dhTVZST2xFIn0.eyJleHAiOjE3NDY1NDQzNjYsImlhdCI6MTc0NjU0MzQ2NiwiYXV0aF90aW1lIjoxNzQ2NTQzNDY2LCJqdGkiOiJmYzcxMDA3MS1hZjNhLTQ0M2YtYWU0MS03ZTliODNkYTJlZWMiLCJpc3MiOiJodHRwOi8vMTI3LjAuMC4xLnNzbGlwLmlvL3JlYWxtcy9jc3gtY29yZXN5c3RlbSIsImF1ZCI6ImNzeC1jb3Jlc3lzdGVtIiwic3ViIjoiYWE5MDI3YWYtNTZmYy00YTVlLTlkMjAtMTAyZjIyYTYzMzIxIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiY3N4LWNvcmVzeXN0ZW0iLCJzaWQiOiI3ODRmZDhlMC1jOTk5LTQxNmEtOGFkMy01MmE4MzBlNWEzNTgiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiY2hpZWYtc3VwZXJ2aXNvciJdfSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsInByZWZlcnJlZF91c2VybmFtZSI6InN1cGVydmlzb3IiLCJlbWFpbCI6InN1cGVydmlzb3JAY29yZXN5c3RlbS5jc3guY29tIn0.RVXeGF8_mh-uhvJPaqI8DhdR8z9Lf_2vxFjpi1dBFFYCuBUMFpIO1YpdIQGzkNfMY39JakFtIUnDjAJlltjX5SW4Qgaf66BMGJKTMy2tBeGofzmrFpN7sSbBpi3zYLR_23LdoJrmbsmgpa7S8GMV1vcSfapGp0u5vSTLmKKQMAjF4bO9LJMeNRtufaXkpFDMPNO1m54lAPrgU5WAt2Os1gsgW3R-7QqUi0atbPKLFSrf_l2Q9fiSgJSPTLf4unwtUZCRH9baHkmzC35BflFyIw6xPLwrNaTitE9uqRYtW2_TVKzCkYx3pbxq7wSiGeaVgO8wzwDOAmB5RvFn33xv_Q&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1746544366288&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;eyJhbGciOiJIUzUxMiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJjYjE4ODAwZi00YWVkLTRkNTQtYjE3Mi1lNTFiM2I4ZjE2YzUifQ.eyJleHAiOjE3NDY1NDUyNjYsImlhdCI6MTc0NjU0MzQ2NiwianRpIjoiMjhiM2EwNTgtY2Y1Mi00NjljLTlhNzgtNTEyMDlkMmIyMDcwIiwiaXNzIjoiaHR0cDovLzEyNy4wLjAuMS5zc2xpcC5pby9yZWFsbXMvY3N4LWNvcmVzeXN0ZW0iLCJhdWQiOiJodHRwOi8vMTI3LjAuMC4xLnNzbGlwLmlvL3JlYWxtcy9jc3gtY29yZXN5c3RlbSIsInN1YiI6ImFhOTAyN2FmLTU2ZmMtNGE1ZS05ZDIwLTEwMmYyMmE2MzMyMSIsInR5cCI6IlJlZnJlc2giLCJhenAiOiJjc3gtY29yZXN5c3RlbSIsInNpZCI6Ijc4NGZkOGUwLWM5OTktNDE2YS04YWQzLTUyYTgzMGU1YTM1OCIsInNjb3BlIjoiYmFzaWMgYWNyIHByb2ZpbGUgd2ViLW9yaWdpbnMgZW1haWwifQ.ONgyR4n0SHzJCDWZhDWM_9oquwtj4_Gz9LiKokl9GM7uxOY8Ng8-8J46KA1_wNAEGlU6LJjKNdcMruWZFHjmRA&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1746545266288&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;7&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;784fd8e0-c999-416a-8ad3-52a830e5a358&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2025-05-07T17:34:08.656716" level="INFO">${usersessions} = [('fee754cc-9de3-425b-919c-4601a27e09d3', 'supervisor', None, 'logging', None, None, 'eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJYRk9VTHBUOU1YSDNxNm9jcWttYzFRLTIwV0J5U2hkZUYyQ3dhTVZST2xFIn0.ey...</msg>
+<var>${usersessions}</var>
+<arg>SELECT * FROM usersessions;</arg>
+<doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
+The type of row values depends on the database module -
+usually they are tuples or tuple-like objects.</doc>
+<status status="PASS" start="2025-05-07T17:34:08.649821" elapsed="0.007114"/>
 </kw>
-<status status="PASS" start="2025-05-06T15:54:54.116286" elapsed="4.635532"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Listado de sesiones abiertas: ${usersessions}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-07T17:34:08.657265" elapsed="0.002249"/>
+</kw>
+<status status="PASS" start="2025-05-07T17:34:08.648875" elapsed="0.010924"/>
 </test>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-06T15:54:58.753985" elapsed="2.204323"/>
+<kw name="Close test" owner="initialConfiguration" type="TEARDOWN">
+<kw name="Disconnect From All Databases" owner="DatabaseLibrary">
+<doc>Disconnects from all the databases -
+useful when testing with multiple database connections (aliases).</doc>
+<status status="PASS" start="2025-05-07T17:34:08.661308" elapsed="0.000410"/>
 </kw>
-<doc>A test suite to check that CSX logs correctly.</doc>
+<status status="PASS" start="2025-05-07T17:34:08.660911" elapsed="0.000917"/>
+</kw>
+<doc>This test checks that robotframework is able to connecto to CSX DB</doc>
 <meta name="Version">0.1</meta>
-<status status="PASS" start="2025-05-06T15:54:53.833742" elapsed="7.124733"/>
+<status status="PASS" start="2025-05-07T17:34:08.329890" elapsed="0.332005"/>
 </suite>
-<status status="PASS" start="2025-05-06T15:54:53.831134" elapsed="7.129503"/>
+<status status="PASS" start="2025-05-07T17:34:08.327206" elapsed="0.336465"/>
 </suite>
-<status status="PASS" start="2025-05-06T15:54:53.810070" elapsed="7.152418"/>
+<status status="PASS" start="2025-05-07T17:34:08.306945" elapsed="0.358342"/>
 </suite>
 <statistics>
 <total>
@@ -114,9 +102,9 @@
 <tag>
 </tag>
 <suite>
-<stat name="RobotFrameworkTestProject" id="s1" pass="1" fail="0" skip="0">RobotFrameworkTestProject</stat>
-<stat name="Tests" id="s1-s1" pass="1" fail="0" skip="0">RobotFrameworkTestProject.Tests</stat>
-<stat name="Valid Login" id="s1-s1-s1" pass="1" fail="0" skip="0">RobotFrameworkTestProject.Tests.Valid Login</stat>
+<stat name="Richard-RobotFrameworkTestProject" id="s1" pass="1" fail="0" skip="0">Richard-RobotFrameworkTestProject</stat>
+<stat name="Tests" id="s1-s1" pass="1" fail="0" skip="0">Richard-RobotFrameworkTestProject.Tests</stat>
+<stat name="Connect Database" id="s1-s1-s1" pass="1" fail="0" skip="0">Richard-RobotFrameworkTestProject.Tests.Connect Database</stat>
 </suite>
 </statistics>
 <errors>

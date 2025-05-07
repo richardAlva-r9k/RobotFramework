@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation    A test suite to check that CSX logs correctly.
-Resource    ../Resources/resource.resource
+Resource    ../Resources/browser.resource
 Suite Teardown    Close Browser
 Metadata         Version    0.1
 
