@@ -22,6 +22,10 @@ Connect Users BBDD
     ${DBPort}=    Get Config    port    database
     ${DBUser}=    Get Config    user    database
     Connect to database   psycopg2   ${DBName}    ${DBUser}    ${DBPass}    ${DBHost}    ${DBPort}
+
+Check userssessions
+    ${usersessions}=    Query    SELECT * FROM userssessions;
+    
     
 Disconnect Users BBDD
     Disconnect from database

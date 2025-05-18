@@ -7,6 +7,6 @@ Resource    browser.resource
 *** Keywords ***
 Set initial configuration
     Connect Users BBDD   
-
+    
 Close test
     Disconnect From All Databases
