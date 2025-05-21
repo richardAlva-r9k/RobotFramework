@@ -1,62 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-21T11:35:05.920960" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-21T16:39:51.924174" rpa="false" schemaversion="5">
 <suite id="s1" name="Richard-RobotFrameworkTestProject" source="D:\Rail9000\RobotFramework\Richard-RobotFrameworkTestProject">
 <suite id="s1-s1" name="Tests" source="D:\Rail9000\RobotFramework\Richard-RobotFrameworkTestProject\Tests">
-<suite id="s1-s1-s1" name="Informal tests" source="D:\Rail9000\RobotFramework\Richard-RobotFrameworkTestProject\Tests\Informal tests">
-<suite id="s1-s1-s1-s1" name="Valid Login" source="D:\Rail9000\RobotFramework\Richard-RobotFrameworkTestProject\Tests\Informal tests\valid_login.robot">
+<suite id="s1-s1-s1" name="1.5.3 User logoff" source="D:\Rail9000\RobotFramework\Richard-RobotFrameworkTestProject\Tests\1.5.3 User logoff">
+<suite id="s1-s1-s1-s1" name="CR9K-266271" source="D:\Rail9000\RobotFramework\Richard-RobotFrameworkTestProject\Tests\1.5.3 User logoff\CR9K-266271.robot">
 <kw name="Set initial configuration" owner="initialConfiguration" type="SETUP">
 <kw name="New Browser" owner="Browser">
-<msg time="2025-05-21T11:35:06.180134" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 500.0, "timeout": 30000.0, "tracesDir": "D:\\Rail9000\\RobotFramework\\Richard-RobotFrameworkTestProject\\results\\browser\\traces\\temp\\b1d4ded9-d576-4afb-8c7d-8cfa4dce1bfe"}</msg>
-<msg time="2025-05-21T11:35:06.215087" level="INFO">Starting Browser process C:\Python313\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:53074</msg>
-<msg time="2025-05-21T11:35:07.540867" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":500,"timeout":30000,"tracesDir":"D:\\Rail9000\\RobotFramework\\Richard-RobotFrameworkTestProject\\results\\browser\\traces\\temp\\b1d4ded9-d576-4afb-8c7d-8cfa4dce1bfe"}</msg>
-<arg>browser=chromium</arg>
-<arg>headless=false</arg>
-<arg>slowMo=0.5</arg>
+<msg time="2025-05-21T16:39:52.130868" level="INFO">{"browser": "chromium", "headless": false, "args": ["--incognito"], "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 500.0, "timeout": 30000.0, "tracesDir": "D:\\Rail9000\\RobotFramework\\Richard-RobotFrameworkTestProject\\results\\browser\\traces\\temp\\3fe12be4-3278-414f-9b50-d231f5bb7415"}</msg>
+<msg time="2025-05-21T16:39:52.161055" level="INFO">Starting Browser process C:\Python313\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:56516</msg>
+<msg time="2025-05-21T16:39:53.493718" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"args":["--incognito"],"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":500,"timeout":30000,"tracesDir":"D:\\Rail9000\\RobotFramework\\Richard-RobotFrameworkTestProject\\results\\browser\\traces\\temp\\3fe12be4-3278-414f-9b50-d231f5bb7415"}</msg>
+<arg>browser=${BROWSER}</arg>
+<arg>headless=${HEADLESS}</arg>
+<arg>slowMo=${SLOWMO}</arg>
+<arg>args=['--incognito']</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<status status="PASS" start="2025-05-21T11:35:06.177894" elapsed="1.363851"/>
+<status status="PASS" start="2025-05-21T16:39:52.128777" elapsed="1.365574"/>
 </kw>
 <kw name="Connect Users BBDD" owner="db">
 <kw name="Get Config" owner="ConfigReader">
-<msg time="2025-05-21T11:35:07.544421" level="INFO">${DBHost} = localhost</msg>
+<msg time="2025-05-21T16:39:53.497465" level="INFO">${DBHost} = localhost</msg>
 <var>${DBHost}</var>
 <arg>host</arg>
 <arg>database</arg>
-<status status="PASS" start="2025-05-21T11:35:07.543173" elapsed="0.001828"/>
+<status status="PASS" start="2025-05-21T16:39:53.495834" elapsed="0.002294"/>
 </kw>
 <kw name="Get Config" owner="ConfigReader">
-<msg time="2025-05-21T11:35:07.546189" level="INFO">${DBName} = users_csx</msg>
+<msg time="2025-05-21T16:39:53.499347" level="INFO">${DBName} = users_csx</msg>
 <var>${DBName}</var>
 <arg>name</arg>
 <arg>database</arg>
-<status status="PASS" start="2025-05-21T11:35:07.545468" elapsed="0.001007"/>
+<status status="PASS" start="2025-05-21T16:39:53.498499" elapsed="0.001281"/>
 </kw>
 <kw name="Get Config" owner="ConfigReader">
-<msg time="2025-05-21T11:35:07.547327" level="INFO">${DBPass} = ""</msg>
+<msg time="2025-05-21T16:39:53.500927" level="INFO">${DBPass} = ""</msg>
 <var>${DBPass}</var>
 <arg>password</arg>
 <arg>database</arg>
-<status status="PASS" start="2025-05-21T11:35:07.546709" elapsed="0.000940"/>
+<status status="PASS" start="2025-05-21T16:39:53.500091" elapsed="0.001415"/>
 </kw>
 <kw name="Get Config" owner="ConfigReader">
-<msg time="2025-05-21T11:35:07.548638" level="INFO">${DBPort} = 5432</msg>
+<msg time="2025-05-21T16:39:53.502492" level="INFO">${DBPort} = 5432</msg>
 <var>${DBPort}</var>
 <arg>port</arg>
 <arg>database</arg>
-<status status="PASS" start="2025-05-21T11:35:07.547903" elapsed="0.001126"/>
+<status status="PASS" start="2025-05-21T16:39:53.501770" elapsed="0.001176"/>
 </kw>
 <kw name="Get Config" owner="ConfigReader">
-<msg time="2025-05-21T11:35:07.550225" level="INFO">${DBUser} = postgres</msg>
+<msg time="2025-05-21T16:39:53.504198" level="INFO">${DBUser} = postgres</msg>
 <var>${DBUser}</var>
 <arg>user</arg>
 <arg>database</arg>
-<status status="PASS" start="2025-05-21T11:35:07.549519" elapsed="0.001018"/>
+<status status="PASS" start="2025-05-21T16:39:53.503259" elapsed="0.001448"/>
 </kw>
 <kw name="Connect To Database" owner="DatabaseLibrary">
-<msg time="2025-05-21T11:35:07.551673" level="INFO">Looking for configuration file: 'resources\db.cfg'</msg>
-<msg time="2025-05-21T11:35:07.552209" level="INFO">Configuration file doesn't exist</msg>
-<msg time="2025-05-21T11:35:07.572409" level="INFO">Connect to DB using : psycopg2.connect(database='users_csx', user='postgres', password=***, host='localhost', port=5432)</msg>
+<msg time="2025-05-21T16:39:53.505943" level="INFO">Looking for configuration file: 'resources\db.cfg'</msg>
+<msg time="2025-05-21T16:39:53.506580" level="INFO">Configuration file doesn't exist</msg>
+<msg time="2025-05-21T16:39:53.522884" level="INFO">Connect to DB using : psycopg2.connect(database='users_csx', user='postgres', password=***, host='localhost', port=5432)</msg>
 <arg>psycopg2</arg>
 <arg>${DBName}</arg>
 <arg>${DBUser}</arg>
@@ -66,78 +67,61 @@
 <doc>Creates a database connection using the DB API 2.0 ``db_module`` and the parameters provided.
 Along with listed commonly used arguments (`db_name`, `db_host` etc.)
 you can set any other DB module specific parameters as key/value pairs.</doc>
-<status status="PASS" start="2025-05-21T11:35:07.550782" elapsed="0.031784"/>
+<status status="PASS" start="2025-05-21T16:39:53.505068" elapsed="0.027060"/>
 </kw>
-<status status="PASS" start="2025-05-21T11:35:07.542311" elapsed="0.040567"/>
+<status status="PASS" start="2025-05-21T16:39:53.494936" elapsed="0.037540"/>
 </kw>
 <kw name="Check Open Sessions" owner="db">
 <kw name="Query" owner="DatabaseLibrary">
-<msg time="2025-05-21T11:35:07.584069" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT COUNT(*) FROM usersessions WHERE status IS NOT NULL;&lt;/code&gt;</msg>
-<msg time="2025-05-21T11:35:07.586483" level="INFO">Commit the transaction</msg>
-<msg time="2025-05-21T11:35:07.587750" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 1 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;count&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
-<msg time="2025-05-21T11:35:07.588152" level="INFO">${query} = [(1,)]</msg>
+<msg time="2025-05-21T16:39:53.534093" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT COUNT(*) FROM usersessions WHERE status IS NOT NULL;&lt;/code&gt;</msg>
+<msg time="2025-05-21T16:39:53.536846" level="INFO">Commit the transaction</msg>
+<msg time="2025-05-21T16:39:53.537752" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 1 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;count&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2025-05-21T16:39:53.538223" level="INFO">${query} = [(0,)]</msg>
 <var>${query}</var>
 <arg>SELECT COUNT(*) FROM usersessions WHERE status IS NOT NULL;</arg>
 <doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
 The type of row values depends on the database module -
 usually they are tuples or tuple-like objects.</doc>
-<status status="PASS" start="2025-05-21T11:35:07.583733" elapsed="0.004605"/>
+<status status="PASS" start="2025-05-21T16:39:53.533578" elapsed="0.004916"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-05-21T11:35:07.590047" level="INFO">${count} = 1</msg>
+<msg time="2025-05-21T16:39:53.540196" level="INFO">${count} = 0</msg>
 <var>${count}</var>
 <arg>${query[0][0]}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-05-21T11:35:07.588692" elapsed="0.001555"/>
+<status status="PASS" start="2025-05-21T16:39:53.538828" elapsed="0.001840"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Número de sesiones abiertas: ${count}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-05-21T11:35:07.590515" elapsed="0.000975"/>
+<status status="PASS" start="2025-05-21T16:39:53.540966" elapsed="0.000829"/>
 </kw>
 <if>
 <branch type="IF" condition="${count} &gt; 0">
 <kw name="Close Open Sessions" owner="db">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Hay sesiones abiertas, se procederá a cerrarlas</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-05-21T11:35:07.593444" elapsed="0.000554"/>
+<status status="NOT RUN" start="2025-05-21T16:39:53.544441" elapsed="0.000229"/>
 </kw>
-<kw name="Execute Sql String" owner="DatabaseLibrary">
-<msg time="2025-05-21T11:35:07.594536" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;DELETE FROM usersessions;&lt;/code&gt;</msg>
-<msg time="2025-05-21T11:35:07.596955" level="INFO">Commit the transaction</msg>
-<arg>DELETE FROM usersessions;</arg>
-<doc>Executes the ``sql_string`` as a single SQL command.</doc>
-<status status="PASS" start="2025-05-21T11:35:07.594224" elapsed="0.012153"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Sesiones cerradas</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-05-21T11:35:07.606694" elapsed="0.001135"/>
-</kw>
-<status status="PASS" start="2025-05-21T11:35:07.592935" elapsed="0.015073"/>
-</kw>
-<status status="PASS" start="2025-05-21T11:35:07.591769" elapsed="0.016316"/>
+<status status="NOT RUN" start="2025-05-21T16:39:53.542044" elapsed="0.002720"/>
 </branch>
 <branch type="ELSE">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>No hay sesiones abiertas</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2025-05-21T11:35:07.608519" elapsed="0.000237"/>
+<status status="PASS" start="2025-05-21T16:39:53.545103" elapsed="0.000434"/>
 </kw>
-<status status="NOT RUN" start="2025-05-21T11:35:07.608152" elapsed="0.001604"/>
+<status status="PASS" start="2025-05-21T16:39:53.544837" elapsed="0.000793"/>
 </branch>
-<status status="PASS" start="2025-05-21T11:35:07.591712" elapsed="0.018148"/>
+<status status="PASS" start="2025-05-21T16:39:53.541996" elapsed="0.003682"/>
 </if>
-<status status="PASS" start="2025-05-21T11:35:07.583235" elapsed="0.026986"/>
+<status status="PASS" start="2025-05-21T16:39:53.532911" elapsed="0.012833"/>
 </kw>
-<status status="PASS" start="2025-05-21T11:35:06.176398" elapsed="1.433992"/>
+<status status="PASS" start="2025-05-21T16:39:52.127850" elapsed="1.417990"/>
 </kw>
 <test id="s1-s1-s1-s1-t1" name="Log in as supervisor" line="9">
 <kw name="Open Login Page" owner="browser">
 <kw name="Open Url" owner="browser">
 <kw name="New Context" owner="Browser">
-<msg time="2025-05-21T11:35:07.619299" level="INFO">{
+<msg time="2025-05-21T16:39:53.554590" level="INFO">{
   "acceptDownloads": true,
   "bypassCSP": false,
   "forcedColors": "none",
@@ -147,177 +131,291 @@ usually they are tuples or tuple-like objects.</doc>
   "reducedMotion": "no-preference",
   "serviceWorkers": "allow",
   "viewport": {
-    "height": 720,
-    "width": 1280
+    "width": 1280,
+    "height": 720
   }
 }</msg>
-<msg time="2025-05-21T11:35:07.637642" level="INFO">Successfully created context. </msg>
-<msg time="2025-05-21T11:35:07.638096" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'height': 720, 'width': 1280}}</msg>
+<msg time="2025-05-21T16:39:53.572962" level="INFO">Successfully created context. </msg>
+<msg time="2025-05-21T16:39:53.573306" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new BrowserContext with specified options.</doc>
-<status status="PASS" start="2025-05-21T11:35:07.616937" elapsed="0.021543"/>
+<status status="PASS" start="2025-05-21T16:39:53.552745" elapsed="0.020842"/>
 </kw>
 <kw name="New Page" owner="Browser">
-<msg time="2025-05-21T11:35:09.422926" level="INFO">Successfully initialized new page object and opened url: http://127.0.0.1.nip.io/</msg>
+<msg time="2025-05-21T16:39:55.346811" level="INFO">Successfully initialized new page object and opened url: http://127.0.0.1.nip.io/</msg>
 <arg>${url}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<status status="PASS" start="2025-05-21T11:35:07.638896" elapsed="1.784514"/>
+<status status="PASS" start="2025-05-21T16:39:53.573788" elapsed="1.774585"/>
 </kw>
 <kw name="Set Viewport Size" owner="Browser">
-<msg time="2025-05-21T11:35:09.436495" level="INFO">Set viewport size to: [object Object]</msg>
+<msg time="2025-05-21T16:39:55.373660" level="INFO">Set viewport size to: [object Object]</msg>
 <arg>1920</arg>
 <arg>1080</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Sets current Pages viewport size to specified dimensions.</doc>
-<status status="PASS" start="2025-05-21T11:35:09.423611" elapsed="0.013765"/>
+<status status="PASS" start="2025-05-21T16:39:55.348801" elapsed="0.025815"/>
 </kw>
 <arg>${LOGIN_URL}</arg>
-<status status="PASS" start="2025-05-21T11:35:07.616429" elapsed="1.821257"/>
+<status status="PASS" start="2025-05-21T16:39:53.552286" elapsed="1.822759"/>
 </kw>
 <kw name="Check Login Page Should Be Loaded" owner="browser">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-05-21T11:35:09.484454" level="INFO">Waited for Element with selector css=div.login-pf-page at state visible</msg>
+<msg time="2025-05-21T16:39:55.425129" level="INFO">Waited for Element with selector css=div.login-pf-page at state visible</msg>
 <arg>css=div.login-pf-page</arg>
 <arg>visible</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-05-21T11:35:09.438965" elapsed="0.045887"/>
+<status status="PASS" start="2025-05-21T16:39:55.377757" elapsed="0.047927"/>
 </kw>
 <kw name="Get Title" owner="Browser">
-<msg time="2025-05-21T11:35:09.491587" level="INFO">Title: 'Sign in to CSX CoreSystem'</msg>
-<msg time="2025-05-21T11:35:09.491965" level="INFO">${title} = Sign in to CSX CoreSystem</msg>
+<msg time="2025-05-21T16:39:55.434052" level="INFO">Title: 'Sign in to CSX CoreSystem'</msg>
+<msg time="2025-05-21T16:39:55.434780" level="INFO">${title} = Sign in to CSX CoreSystem</msg>
 <var>${title}</var>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns the title of the current page.</doc>
-<status status="PASS" start="2025-05-21T11:35:09.485052" elapsed="0.007139"/>
+<status status="PASS" start="2025-05-21T16:39:55.425969" elapsed="0.009182"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${title}</arg>
 <arg>${expected_title}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-05-21T11:35:09.492815" elapsed="0.000818"/>
+<status status="PASS" start="2025-05-21T16:39:55.435563" elapsed="0.000928"/>
 </kw>
 <arg>Sign in to CSX CoreSystem</arg>
-<status status="PASS" start="2025-05-21T11:35:09.437982" elapsed="0.055836"/>
+<status status="PASS" start="2025-05-21T16:39:55.375974" elapsed="0.060827"/>
 </kw>
 <arg>${LOGIN_URL}</arg>
-<status status="PASS" start="2025-05-21T11:35:07.615816" elapsed="1.878166"/>
+<status status="PASS" start="2025-05-21T16:39:53.551610" elapsed="1.885439"/>
 </kw>
 <kw name="Input Login Valid Credentials" owner="browser">
 <kw name="Fill Text" owner="Browser">
-<msg time="2025-05-21T11:35:09.497031" level="INFO">Fills the text 'supervisor' in the given field.</msg>
+<msg time="2025-05-21T16:39:55.441321" level="INFO">Fills the text 'supervisor' in the given field.</msg>
 <arg>input[name="username"]</arg>
 <arg>${username}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2025-05-21T11:35:09.495583" elapsed="0.533060"/>
+<status status="PASS" start="2025-05-21T16:39:55.438741" elapsed="0.527455"/>
 </kw>
 <kw name="Fill Text" owner="Browser">
-<msg time="2025-05-21T11:35:10.030227" level="INFO">Fills the text 'supervisor' in the given field.</msg>
+<msg time="2025-05-21T16:39:55.967896" level="INFO">Fills the text 'supervisor' in the given field.</msg>
 <arg>input[name="password"]</arg>
 <arg>${password}</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2025-05-21T11:35:10.028878" elapsed="0.523173"/>
+<status status="PASS" start="2025-05-21T16:39:55.966482" elapsed="0.516766"/>
 </kw>
 <kw name="Click" owner="Browser">
-<msg time="2025-05-21T11:35:10.553779" level="INFO">Clicks the element 'id=kc-login'.</msg>
+<msg time="2025-05-21T16:39:56.486176" level="INFO">Clicks the element 'id=kc-login'.</msg>
 <arg>id=kc-login</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-05-21T11:35:10.552397" elapsed="0.730423"/>
+<status status="PASS" start="2025-05-21T16:39:56.483714" elapsed="0.902629"/>
 </kw>
 <kw name="Main Page Should Be Open" owner="browser">
 <kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-05-21T11:35:12.741561" level="INFO">Waited for Element with selector ix-blind.rootPane.blind-outline.hydrated at state visible</msg>
-<arg>ix-blind.rootPane.blind-outline.hydrated</arg>
+<msg time="2025-05-21T16:40:00.159494" level="INFO">Waited for Element with selector gridster-item#DashBoard_mainCanvas at state visible</msg>
+<arg>gridster-item#DashBoard_mainCanvas</arg>
 <arg>visible</arg>
 <tag>PageContent</tag>
 <tag>Wait</tag>
 <doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-05-21T11:35:11.283611" elapsed="1.458253"/>
+<status status="PASS" start="2025-05-21T16:39:57.388516" elapsed="2.771820"/>
 </kw>
 <kw name="Get Title" owner="Browser">
-<msg time="2025-05-21T11:35:12.747848" level="INFO">Title: 'Core System'</msg>
-<msg time="2025-05-21T11:35:12.748211" level="INFO">${title} = Core System</msg>
+<msg time="2025-05-21T16:40:00.178869" level="INFO">Title: 'Core System'</msg>
+<msg time="2025-05-21T16:40:00.179707" level="INFO">${title} = Core System</msg>
 <var>${title}</var>
 <tag>Assertion</tag>
 <tag>Getter</tag>
 <tag>PageContent</tag>
 <doc>Returns the title of the current page.</doc>
-<status status="PASS" start="2025-05-21T11:35:12.742449" elapsed="0.006033"/>
+<status status="PASS" start="2025-05-21T16:40:00.160824" elapsed="0.019332"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${title}</arg>
 <arg>${expected_title}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-05-21T11:35:12.748717" elapsed="0.000755"/>
+<status status="PASS" start="2025-05-21T16:40:00.180710" elapsed="0.001211"/>
 </kw>
 <arg>Core System</arg>
-<status status="PASS" start="2025-05-21T11:35:11.283067" elapsed="1.466529"/>
+<status status="PASS" start="2025-05-21T16:39:57.387036" elapsed="2.795210"/>
 </kw>
 <arg>${VALID_USERNAME}</arg>
 <arg>${VALID_PASSWORD}</arg>
-<status status="PASS" start="2025-05-21T11:35:09.494588" elapsed="3.255129"/>
+<status status="PASS" start="2025-05-21T16:39:55.437662" elapsed="4.744855"/>
 </kw>
-<msg time="2025-05-21T11:35:12.764911" level="INFO">Switching context to context=f5ed5a86-0e0c-4ba1-a0c9-91fde25b11f8 in CURRENT</msg>
-<msg time="2025-05-21T11:35:12.776992" level="INFO">Successfully changed active context: context=f5ed5a86-0e0c-4ba1-a0c9-91fde25b11f8</msg>
-<msg time="2025-05-21T11:35:12.816996" level="INFO">Successfully closed Context</msg>
-<status status="PASS" start="2025-05-21T11:35:07.610546" elapsed="5.139552"/>
+<kw name="Select Role And Position" owner="browser">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-05-21T16:40:00.259604" level="INFO">Waited for Element with selector ix-select &gt;&gt; nth=0 at state visible</msg>
+<arg>ix-select &gt;&gt; nth=0</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-05-21T16:40:00.226414" elapsed="0.034247"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-05-21T16:40:00.264842" level="INFO">Clicks the element 'ix-select &gt;&gt; nth=0'.</msg>
+<arg>ix-select &gt;&gt; nth=0</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-05-21T16:40:00.261294" elapsed="0.633490"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-05-21T16:40:01.610219" level="INFO">Waited for Element with selector ix-select-item[ng-reflect-value="Chief Dispatcher"] at state visible</msg>
+<arg>ix-select-item[ng-reflect-value="${role}"]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-05-21T16:40:00.895118" elapsed="0.715883"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-05-21T16:40:01.614407" level="INFO">Clicks the element 'ix-select-item[ng-reflect-value="Chief Dispatcher"]'.</msg>
+<arg>ix-select-item[ng-reflect-value="${role}"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-05-21T16:40:01.611451" elapsed="0.551317"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-05-21T16:40:02.403695" level="INFO">Waited for Element with selector ix-select &gt;&gt; nth=1 at state visible</msg>
+<arg>ix-select &gt;&gt; nth=1</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-05-21T16:40:02.163491" elapsed="0.240921"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-05-21T16:40:02.406885" level="INFO">Clicks the element 'ix-select &gt;&gt; nth=1'.</msg>
+<arg>ix-select &gt;&gt; nth=1</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-05-21T16:40:02.404715" elapsed="1.252560"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-05-21T16:40:03.667872" level="INFO">Waited for Element with selector ix-select-item[ng-reflect-value="Florence"] at state visible</msg>
+<arg>ix-select-item[ng-reflect-value="${position}"]</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-05-21T16:40:03.657739" elapsed="0.010475"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-05-21T16:40:03.670089" level="INFO">Clicks the element 'ix-select-item[ng-reflect-value="Florence"]'.</msg>
+<arg>ix-select-item[ng-reflect-value="${position}"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-05-21T16:40:03.668428" elapsed="0.550130"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-05-21T16:40:04.230000" level="INFO">Waited for Element with selector text=Start session at state visible</msg>
+<arg>text=Start session</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-05-21T16:40:04.218825" elapsed="0.011672"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-05-21T16:40:04.232892" level="INFO">Clicks the element 'text=Start session'.</msg>
+<arg>text=Start session</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-05-21T16:40:04.230867" elapsed="0.576782"/>
+</kw>
+<kw name="Main Page Should Be Open" owner="browser">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-05-21T16:40:04.830516" level="INFO">Waited for Element with selector gridster-item#DashBoard_mainCanvas at state visible</msg>
+<arg>gridster-item#DashBoard_mainCanvas</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-05-21T16:40:04.809259" elapsed="0.022158"/>
+</kw>
+<kw name="Get Title" owner="Browser">
+<msg time="2025-05-21T16:40:04.857988" level="INFO">Title: 'Core System'</msg>
+<msg time="2025-05-21T16:40:04.858757" level="INFO">${title} = Core System</msg>
+<var>${title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-05-21T16:40:04.832148" elapsed="0.026975"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>${expected_title}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-21T16:40:04.859505" elapsed="0.000956"/>
+</kw>
+<arg>Core System</arg>
+<status status="PASS" start="2025-05-21T16:40:04.808123" elapsed="0.052599"/>
+</kw>
+<arg>role=Chief Dispatcher</arg>
+<arg>position=Florence</arg>
+<status status="PASS" start="2025-05-21T16:40:00.224867" elapsed="4.636045"/>
+</kw>
+<msg time="2025-05-21T16:40:04.912860" level="INFO">Switching context to context=b75ea19d-96e0-4a47-9ca6-bc10f9ab0478 in CURRENT</msg>
+<msg time="2025-05-21T16:40:04.952205" level="INFO">Successfully changed active context: context=b75ea19d-96e0-4a47-9ca6-bc10f9ab0478</msg>
+<msg time="2025-05-21T16:40:05.016492" level="INFO">Successfully closed Context</msg>
+<status status="PASS" start="2025-05-21T16:39:53.545944" elapsed="11.324392"/>
 </test>
-<kw name="Close Test" owner="initialConfiguration" type="TEARDOWN">
+<kw name="Closing Test" owner="initialConfiguration" type="TEARDOWN">
 <kw name="Disconnect Users BBDD" owner="db">
 <kw name="Execute Sql String" owner="DatabaseLibrary">
-<msg time="2025-05-21T11:35:12.821291" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;DELETE FROM usersessions;&lt;/code&gt;</msg>
-<msg time="2025-05-21T11:35:12.823766" level="INFO">Commit the transaction</msg>
+<msg time="2025-05-21T16:40:05.053962" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;DELETE FROM usersessions;&lt;/code&gt;</msg>
+<msg time="2025-05-21T16:40:05.058121" level="INFO">Commit the transaction</msg>
 <arg>DELETE FROM usersessions;</arg>
 <doc>Executes the ``sql_string`` as a single SQL command.</doc>
-<status status="PASS" start="2025-05-21T11:35:12.820599" elapsed="0.013257"/>
+<status status="PASS" start="2025-05-21T16:40:05.053293" elapsed="0.058298"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Cerrando sesiones abiertas</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-05-21T11:35:12.834238" elapsed="0.000823"/>
+<status status="PASS" start="2025-05-21T16:40:05.112059" elapsed="0.001363"/>
 </kw>
 <kw name="Disconnect From Database" owner="DatabaseLibrary">
 <doc>Disconnects from the database.</doc>
-<status status="PASS" start="2025-05-21T11:35:12.835361" elapsed="0.000635"/>
+<status status="PASS" start="2025-05-21T16:40:05.113922" elapsed="0.001992"/>
 </kw>
-<status status="PASS" start="2025-05-21T11:35:12.819903" elapsed="0.016384"/>
+<status status="PASS" start="2025-05-21T16:40:05.052579" elapsed="0.063740"/>
 </kw>
 <kw name="Close Browser" owner="Browser">
-<msg time="2025-05-21T11:35:13.030585" level="INFO">Closed browser</msg>
+<msg time="2025-05-21T16:40:05.367994" level="INFO">Closed browser</msg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-05-21T11:35:12.836527" elapsed="0.194785"/>
+<status status="PASS" start="2025-05-21T16:40:05.116661" elapsed="0.251818"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>Test finalizado</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-05-21T11:35:13.031687" elapsed="0.000911"/>
+<status status="PASS" start="2025-05-21T16:40:05.368736" elapsed="0.000868"/>
 </kw>
-<status status="PASS" start="2025-05-21T11:35:12.819115" elapsed="0.213734"/>
+<status status="PASS" start="2025-05-21T16:40:05.051459" elapsed="0.318384"/>
 </kw>
-<doc>A test suite to check that CSX logs correctly.</doc>
-<meta name="Version">0.1</meta>
-<status status="PASS" start="2025-05-21T11:35:05.957564" elapsed="7.075438"/>
+<doc>Verify that a logged on user shall be able to logoff at anytime during their shitf</doc>
+<meta name="Version">1.0</meta>
+<status status="PASS" start="2025-05-21T16:39:51.953782" elapsed="13.416207"/>
 </suite>
-<status status="PASS" start="2025-05-21T11:35:05.954067" elapsed="7.111649"/>
+<status status="PASS" start="2025-05-21T16:39:51.951779" elapsed="13.468673"/>
 </suite>
-<status status="PASS" start="2025-05-21T11:35:05.950995" elapsed="7.116136"/>
+<status status="PASS" start="2025-05-21T16:39:51.948996" elapsed="13.473559"/>
 </suite>
-<status status="PASS" start="2025-05-21T11:35:05.925711" elapsed="7.142711"/>
+<status status="PASS" start="2025-05-21T16:39:51.928435" elapsed="13.496229"/>
 </suite>
 <statistics>
 <total>
@@ -328,8 +426,8 @@ usually they are tuples or tuple-like objects.</doc>
 <suite>
 <stat name="Richard-RobotFrameworkTestProject" id="s1" pass="1" fail="0" skip="0">Richard-RobotFrameworkTestProject</stat>
 <stat name="Tests" id="s1-s1" pass="1" fail="0" skip="0">Richard-RobotFrameworkTestProject.Tests</stat>
-<stat name="Informal tests" id="s1-s1-s1" pass="1" fail="0" skip="0">Richard-RobotFrameworkTestProject.Tests.Informal tests</stat>
-<stat name="Valid Login" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">Richard-RobotFrameworkTestProject.Tests.Informal tests.Valid Login</stat>
+<stat name="1.5.3 User logoff" id="s1-s1-s1" pass="1" fail="0" skip="0">Richard-RobotFrameworkTestProject.Tests.1.5.3 User logoff</stat>
+<stat name="CR9K-266271" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">Richard-RobotFrameworkTestProject.Tests.1.5.3 User logoff.CR9K-266271</stat>
 </suite>
 </statistics>
 <errors>

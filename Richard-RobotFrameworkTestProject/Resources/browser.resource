@@ -39,8 +39,28 @@ Input Login Valid Credentials
     Click    id=kc-login
     Main Page Should Be Open    Core System
 
-Main Page Should Be Open
+Role&Position Page Should Be Open
     [Arguments]    ${expected_title}
     Wait For Elements State       ix-blind.rootPane.blind-outline.hydrated    visible
+    ${title}=    Get Title
+    Should Be Equal    ${title}    ${expected_title}
+
+Select Role And Position
+    [Arguments]    ${role}    ${position}
+    Wait For Elements State    ix-select >> nth=0
+    Click    ix-select >> nth=0
+    Wait For Elements State    ix-select-item[ng-reflect-value="${role}"]
+    Click    ix-select-item[ng-reflect-value="${role}"]
+    Wait For Elements State    ix-select >> nth=1
+    Click    ix-select >> nth=1
+    Wait For Elements State    ix-select-item[ng-reflect-value="${position}"]
+    Click    ix-select-item[ng-reflect-value="${position}"]
+    Wait For Elements State    text=Start session
+    Click    text=Start session
+    Main Page Should Be Open    Core System
+
+Main Page Should Be Open
+    [Arguments]    ${expected_title}
+    Wait For Elements State    gridster-item#DashBoard_mainCanvas    visible
     ${title}=    Get Title
     Should Be Equal    ${title}    ${expected_title}
