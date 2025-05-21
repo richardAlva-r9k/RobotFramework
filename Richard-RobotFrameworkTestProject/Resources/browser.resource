@@ -1,62 +1,46 @@
 *** Settings ***
 Documentation    This resource contains the keywords to access to CSX main page and also to log in the user
-Library    SeleniumLibrary    timeout=1    implicit_wait=2
+Library    Browser
 Library           OperatingSystem
 Library           Collections
 
 *** Variables ***
 ${LOGIN_URL}    http://127.0.0.1.nip.io/
-${BROWSER}    Edge
+${BROWSER}    Chromium
 ${VALID_USERNAME}    supervisor
 ${VALID_PASSWORD}    supervisor
 ${INVALID_USERNAME}    invalid
 ${INVALID_PASSWORD}    invalid
-
+${HEADLESS}    false
+${SLOWMO}    0.5
 
 *** Keywords ***
+Open Login Page
+    [Arguments]    ${LOGIN_URL}
+    Open Url    ${LOGIN_URL}
+    Check Login Page Should Be Loaded    Sign in to CSX CoreSystem
+
 Open Url
-    [Arguments]    ${browser}    ${url}
-    Create WebDriver    ${browser}
-    Maximize Browser Window
-    Go To    ${url}
-    Wait For Condition    return !!document.body
-
-Open Url With Edge
     [Arguments]    ${url}
-    Open Url    Edge    ${url}
-
-Open Browser to Login Page
-    [Arguments]    ${url}
-    Open Url With Edge    ${url}
-    Login Page Should Be Open
-
-Login Page Should Be Open
-    Title Should Be    Sign in to CSX CoreSystem
-
-Input Username
-    [Arguments]    ${username}
-    Input Text    username    ${username}
-
-Input Password
-    [Arguments]    ${password}
-    Input Text    password    ${password}
-
-Submit Credentials
-    Click Button    kc-login
-
-Welcome Page Should Be Open
-    Location Should Be    ${LOGIN_URL}
-    Title Should Be    Core System
+    New Context
+    New Page    ${url}
+    Set Viewport Size   1920    1080
     
-Login With Invalid Credentials Should Fail
-    [Arguments]    ${username}    ${password}
-    Open Browser To Login Page    ${LOGIN_URL}
-    Input Username    ${username}
-    Input Password    ${password}
-    Submit Credentials
-    Sleep    0.1
-    Login Should Have Failed
-    [Teardown]    Close Browser
+Check Login Page Should Be Loaded
+    [Arguments]    ${expected_title}
+    Wait For Elements State    css=div.login-pf-page    visible
+    ${title}=    Get Title
+    Should Be Equal    ${title}    ${expected_title}
 
-Login Should Have Failed
-    Page Should Contain Element    xpath=//*[@id="input-error"]
+Input Login Valid Credentials
+    [Arguments]    ${username}    ${password}
+    Fill Text    input[name="username"]    ${username}
+    Fill Text    input[name="password"]    ${password}
+    Click    id=kc-login
+    Main Page Should Be Open    Core System
+
+Main Page Should Be Open
+    [Arguments]    ${expected_title}
+    Wait For Elements State       ix-blind.rootPane.blind-outline.hydrated    visible
+    ${title}=    Get Title
+    Should Be Equal    ${title}    ${expected_title}

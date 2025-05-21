@@ -6,7 +6,8 @@ Resource    browser.resource
 
 *** Keywords ***
 Set initial configuration
-    Connect Users BBDD   
+    New Browser    browser=chromium    headless=true
+    #Connect Users BBDD   
     
 Close test
-    Disconnect From All Databases
+    #Disconnect From All Databases

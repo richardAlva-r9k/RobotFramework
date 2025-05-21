@@ -1,6 +1,5 @@
 *** Settings ***
 Documentation    This resource contains the keywords to access to the database
-Library    SeleniumLibrary    timeout=1    implicit_wait=2
 Library           DatabaseLibrary
 Library           OperatingSystem
 Library           Collections

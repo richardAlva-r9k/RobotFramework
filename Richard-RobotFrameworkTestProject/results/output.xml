@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-21T09:22:35.218999" rpa="false" schemaversion="5">
+<suite id="s1" name="Richard-RobotFrameworkTestProject" source="D:\Rail9000\RobotFramework\Richard-RobotFrameworkTestProject">
+<suite id="s1-s1" name="Tests" source="D:\Rail9000\RobotFramework\Richard-RobotFrameworkTestProject\Tests">
+<suite id="s1-s1-s1" name="Informal tests" source="D:\Rail9000\RobotFramework\Richard-RobotFrameworkTestProject\Tests\Informal tests">
+<suite id="s1-s1-s1-s1" name="Valid Login" source="D:\Rail9000\RobotFramework\Richard-RobotFrameworkTestProject\Tests\Informal tests\valid_login.robot">
+<kw name="New Browser" owner="Browser" type="SETUP">
+<msg time="2025-05-21T09:22:35.523308" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 500.0, "timeout": 30000.0, "tracesDir": "D:\\Rail9000\\RobotFramework\\Richard-RobotFrameworkTestProject\\results\\browser\\traces\\temp\\0273bb4f-af0f-4d15-8aee-44b27abbb905"}</msg>
+<msg time="2025-05-21T09:22:35.580259" level="INFO">Starting Browser process C:\Python313\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:61865</msg>
+<msg time="2025-05-21T09:22:36.976068" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":500,"timeout":30000,"tracesDir":"D:\\Rail9000\\RobotFramework\\Richard-RobotFrameworkTestProject\\results\\browser\\traces\\temp\\0273bb4f-af0f-4d15-8aee-44b27abbb905"}</msg>
+<arg>browser=${BROWSER}</arg>
+<arg>headless=${HEADLESS}</arg>
+<arg>slowMo=${SLOWMO}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2025-05-21T09:22:35.521254" elapsed="1.455697"/>
+</kw>
+<test id="s1-s1-s1-s1-t1" name="Log in as supervisor" line="9">
+<kw name="Open Login Page" owner="browser">
+<kw name="Open Url" owner="browser">
+<kw name="New Context" owner="Browser">
+<msg time="2025-05-21T09:22:36.992808" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2025-05-21T09:22:37.025103" level="INFO">Successfully created context. </msg>
+<msg time="2025-05-21T09:22:37.025922" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2025-05-21T09:22:36.988661" elapsed="0.037829"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2025-05-21T09:22:38.916183" level="INFO">Successfully initialized new page object and opened url: http://127.0.0.1.nip.io/</msg>
+<arg>${url}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2025-05-21T09:22:37.026789" elapsed="1.890197"/>
+</kw>
+<kw name="Set Viewport Size" owner="Browser">
+<msg time="2025-05-21T09:22:38.934427" level="INFO">Set viewport size to: [object Object]</msg>
+<arg>1920</arg>
+<arg>1080</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<status status="PASS" start="2025-05-21T09:22:38.917385" elapsed="0.017501"/>
+</kw>
+<arg>${LOGIN_URL}</arg>
+<status status="PASS" start="2025-05-21T09:22:36.987582" elapsed="1.947522"/>
+</kw>
+<kw name="Check Login Page Should Be Loaded" owner="browser">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-05-21T09:22:38.978122" level="INFO">Waited for Element with selector css=div.login-pf-page at state visible</msg>
+<arg>css=div.login-pf-page</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-05-21T09:22:38.936361" elapsed="0.042246"/>
+</kw>
+<kw name="Get Title" owner="Browser">
+<msg time="2025-05-21T09:22:38.986995" level="INFO">Title: 'Sign in to CSX CoreSystem'</msg>
+<msg time="2025-05-21T09:22:38.987478" level="INFO">${title} = Sign in to CSX CoreSystem</msg>
+<var>${title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-05-21T09:22:38.978937" elapsed="0.008793"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>${expected_title}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-21T09:22:38.988153" elapsed="0.001091"/>
+</kw>
+<arg>Sign in to CSX CoreSystem</arg>
+<status status="PASS" start="2025-05-21T09:22:38.935391" elapsed="0.054157"/>
+</kw>
+<arg>${LOGIN_URL}</arg>
+<status status="PASS" start="2025-05-21T09:22:36.986192" elapsed="2.003593"/>
+</kw>
+<kw name="Input valid credentials" owner="browser">
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-05-21T09:22:38.993336" level="INFO">Fills the text 'supervisor' in the given field.</msg>
+<arg>input[name="username"]</arg>
+<arg>${username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-05-21T09:22:38.991728" elapsed="0.528750"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2025-05-21T09:22:39.522588" level="INFO">Fills the text 'supervisor' in the given field.</msg>
+<arg>input[name="password"]</arg>
+<arg>${password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2025-05-21T09:22:39.520722" elapsed="0.526004"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2025-05-21T09:22:40.049114" level="INFO">Clicks the element 'id=kc-login'.</msg>
+<arg>id=kc-login</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2025-05-21T09:22:40.047334" elapsed="0.981108"/>
+</kw>
+<kw name="Main Page Should Be Open" owner="browser">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2025-05-21T09:22:42.967347" level="INFO">Waited for Element with selector ix-blind.rootPane.blind-outline.hydrated at state visible</msg>
+<arg>ix-blind.rootPane.blind-outline.hydrated</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2025-05-21T09:22:41.030451" elapsed="1.937433"/>
+</kw>
+<kw name="Get Title" owner="Browser">
+<msg time="2025-05-21T09:22:42.974841" level="INFO">Title: 'Core System'</msg>
+<msg time="2025-05-21T09:22:42.975272" level="INFO">${title} = Core System</msg>
+<var>${title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-05-21T09:22:42.968206" elapsed="0.007388"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>${expected_title}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-05-21T09:22:42.975904" elapsed="0.001131"/>
+</kw>
+<arg>Core System</arg>
+<status status="PASS" start="2025-05-21T09:22:41.029177" elapsed="1.948113"/>
+</kw>
+<arg>${VALID_USERNAME}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<status status="PASS" start="2025-05-21T09:22:38.990590" elapsed="3.986948"/>
+</kw>
+<msg time="2025-05-21T09:22:43.000062" level="INFO">Switching context to context=95a99d3c-39f6-4fe8-b294-2112e3734640 in CURRENT</msg>
+<msg time="2025-05-21T09:22:43.014040" level="INFO">Successfully changed active context: context=95a99d3c-39f6-4fe8-b294-2112e3734640</msg>
+<msg time="2025-05-21T09:22:43.064213" level="INFO">Successfully closed Context</msg>
+<status status="PASS" start="2025-05-21T09:22:36.977639" elapsed="6.000648"/>
+</test>
+<kw name="Close Browser" owner="Browser" type="TEARDOWN">
+<msg time="2025-05-21T09:22:43.432213" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-21T09:22:43.068995" elapsed="0.363996"/>
+</kw>
+<doc>A test suite to check that CSX logs correctly.</doc>
+<meta name="Version">0.1</meta>
+<status status="PASS" start="2025-05-21T09:22:35.267233" elapsed="8.165962"/>
+</suite>
+<status status="PASS" start="2025-05-21T09:22:35.263348" elapsed="8.213275"/>
+</suite>
+<status status="PASS" start="2025-05-21T09:22:35.259593" elapsed="8.219242"/>
+</suite>
+<status status="PASS" start="2025-05-21T09:22:35.226601" elapsed="8.254205"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Richard-RobotFrameworkTestProject" id="s1" pass="1" fail="0" skip="0">Richard-RobotFrameworkTestProject</stat>
+<stat name="Tests" id="s1-s1" pass="1" fail="0" skip="0">Richard-RobotFrameworkTestProject.Tests</stat>
+<stat name="Informal tests" id="s1-s1-s1" pass="1" fail="0" skip="0">Richard-RobotFrameworkTestProject.Tests.Informal tests</stat>
+<stat name="Valid Login" id="s1-s1-s1-s1" pass="1" fail="0" skip="0">Richard-RobotFrameworkTestProject.Tests.Informal tests.Valid Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
