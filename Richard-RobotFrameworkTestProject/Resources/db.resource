@@ -22,9 +22,22 @@ Connect Users BBDD
     ${DBUser}=    Get Config    user    database
     Connect to database   psycopg2   ${DBName}    ${DBUser}    ${DBPass}    ${DBHost}    ${DBPort}
 
-Check userssessions
-    ${usersessions}=    Query    SELECT * FROM userssessions;
+Check Open Sessions
+    ${query}=    Query    SELECT COUNT(*) FROM usersessions WHERE status IS NOT NULL;
+    ${count}=    Set Variable    ${query[0][0]}
+    Log To Console   Número de sesiones abiertas: ${count}
+    IF    ${count} > 0
+        Close Open Sessions
+    ELSE
+        Log To Console   No hay sesiones abiertas        
+    END
     
-    
+Close Open Sessions
+    Log To Console   Hay sesiones abiertas, se procederá a cerrarlas
+    Execute Sql String    DELETE FROM usersessions;
+    Log To Console   Sesiones cerradas
+
 Disconnect Users BBDD
-    Disconnect from database
+    Execute Sql String    DELETE FROM usersessions;
+    Log To Console   Cerrando sesiones abiertas
+    Disconnect From Database

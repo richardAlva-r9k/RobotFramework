@@ -6,8 +6,11 @@ Resource    browser.resource
 
 *** Keywords ***
 Set initial configuration
-    New Browser    browser=chromium    headless=true
-    #Connect Users BBDD   
-    
-Close test
-    #Disconnect From All Databases
+    New Browser    browser=chromium    headless=false    slowMo=0.5
+    Connect Users BBDD
+    Check Open Sessions
+
+Close Test
+    Disconnect Users BBDD
+    Close Browser
+    Log To Console    Test finalizado
