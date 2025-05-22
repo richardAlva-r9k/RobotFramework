@@ -5,14 +5,6 @@ Library           OperatingSystem
 Library           Collections
 Library    ../Libraries/ConfigReader.py    path=data/users_csx_bbdd.cfg
 
-
-*** Variables ***
-${DBHost}         ${None}
-${DBName}         ${None}
-${DBPass}         ${None}
-${DBPort}         ${None}
-${DBUser}         ${None}
-
 *** Keywords ***
 Connect Users BBDD
     ${DBHost}=    Get Config    host    database
