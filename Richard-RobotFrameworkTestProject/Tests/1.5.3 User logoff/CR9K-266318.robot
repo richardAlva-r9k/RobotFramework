@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Verify that a logged on user shall be able to logoff at anytime during their shitf
+Documentation    Verify that the user is able to cancel the logoff process
 Resource    ../../Resources/initialConfiguration.resource
 Suite Setup   Set initial configuration
 Suite Teardown  Closing Test
@@ -13,9 +13,9 @@ ${POSITION}    Florence
 ${HOS}    False
 
 *** Test Cases ***
-Log off at any time
+Cancel logoff process
     Open Login Page    ${LOGIN_URL}
     Input Login Valid Credentials    ${VALID_USERNAME}    ${VALID_PASSWORD}
     Select Role And Position    ${ROLE}    ${POSITION}    ${HOS}
-    Confirm Logoff
+    Cancel Logoff
     

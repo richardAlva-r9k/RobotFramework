@@ -21,11 +21,15 @@ ${START_SESSION_BUTTON}    text=Start session
 ${LOGOUT_BUTTON}    ix-menu-item[label="Logout"]
 ${LOGOUT_CONFIRMATION}    text=" Continue"
 ${LOGOUT_CANCEL}    text=" Cancel"
+${HOS_CALENDAR_BUTTON}    button[aria-label="Calendar"]
+${HOS_CALENDAR_TODAY_ITEM}    div.calendar-item.today.selected
+${HOS_INPUT_HOUR}    input[name="hour"]
+${HOS_INPUT_MINUTE}    input[name="minute"]
+${HOS_DONE_BUTTON}    div.btn-select-date-container >> ix-button:has-text("Done")
 
 *** Keywords ***
 
 # GET keywords to select role and position
-
 Get Selector For IX-SELECT-ITEM_ROLE
     [Arguments]    ${role}
     ${selector}=    Set Variable    ix-select-item[ng-reflect-value="${role}"]
