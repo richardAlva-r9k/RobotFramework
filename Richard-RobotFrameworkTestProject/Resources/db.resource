@@ -17,7 +17,6 @@ Connect Users BBDD
 Check Open Sessions
     ${query}=    Query    SELECT COUNT(*) FROM usersessions WHERE status IS NOT NULL;
     ${count}=    Set Variable    ${query[0][0]}
-    Log To Console   Número de sesiones abiertas: ${count}
     IF    ${count} > 0
         Close Open Sessions
     ELSE
@@ -25,11 +24,8 @@ Check Open Sessions
     END
     
 Close Open Sessions
-    Log To Console   Hay sesiones abiertas, se procederá a cerrarlas
     Execute Sql String    DELETE FROM usersessions;
-    Log To Console   Sesiones cerradas
 
 Disconnect Users BBDD
     Execute Sql String    DELETE FROM usersessions;
-    Log To Console   Cerrando sesiones abiertas
     Disconnect From Database

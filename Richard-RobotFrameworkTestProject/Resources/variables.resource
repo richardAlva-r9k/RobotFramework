@@ -12,7 +12,6 @@ ${VALID_PASSWORD}    supervisor
 ${INVALID_USERNAME}    invalid
 ${INVALID_PASSWORD}    invalid
 
-
 #{ Variables for html frontend elements }
 ${LOGIN_TITLE}    Sign in to CSX CoreSystem
 ${MAIN_TITLE}    Core System
@@ -24,9 +23,9 @@ ${INPUT_LOGIN_SUBMIT}    input#kc-login
 ${IX-BLIND_ROLE&POSITION}    ix-blind.rootPane.blind-outline.hydrated
 ${IX-SELECT_ROLE}    ix-select >> nth=0
 ${IX-SELECT_POSITION}    ix-select >> nth=1
-${START_SESSION_BUTTON}    text=Start session
-${LOGOUT_BUTTON}    ix-menu-item[label="Logout"]
-${LOGOUT_CONFIRMATION}    text=" Continue"
+${START_SESSION_BUTTON}    text="Start session"
+${LOGOFF_BUTTON}    ix-menu-item[label="Logout"]
+${CONTINUE_LOGOFF}    text=" Continue"
 ${LOGOUT_CANCEL}    text=" Cancel"
 ${HOS_CALENDAR_BUTTON}    button[aria-label="Calendar"]
 ${HOS_CALENDAR_TODAY_ITEM}    div.calendar-item.today.selected
