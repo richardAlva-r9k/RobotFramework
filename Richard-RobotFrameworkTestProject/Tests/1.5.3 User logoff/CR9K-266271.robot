@@ -17,5 +17,5 @@ Log off at any time
     Open Login Page    ${LOGIN_URL}
     Input Login Valid Credentials    ${VALID_USERNAME}    ${VALID_PASSWORD}
     Select Role And Position    ${ROLE}    ${POSITION}    ${HOS}
-    Confirm Logoff
+    Confirm Logoff    HOS=${HOS}
     

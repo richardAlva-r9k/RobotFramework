@@ -17,5 +17,6 @@ Cancel logoff process
     Open Login Page    ${LOGIN_URL}
     Input Login Valid Credentials    ${VALID_USERNAME}    ${VALID_PASSWORD}
     Select Role And Position    ${ROLE}    ${POSITION}    ${HOS}
-    Cancel Logoff
+    Cancel Logoff    HOS=${HOS}    CANCEL_LOGOFF=True    CLOSE_LOGOFF_WINDOW=False
+    Cancel Logoff    HOS=${HOS}    CANCEL_LOGOFF=False    CLOSE_LOGOFF_WINDOW=True
     

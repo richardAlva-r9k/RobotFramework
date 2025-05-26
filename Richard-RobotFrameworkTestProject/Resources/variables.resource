@@ -6,6 +6,13 @@ ${BROWSER}    Chromium
 ${HEADLESS}    false
 ${SLOWMO}    0.5
 
+#{ Variables for login credentials }
+${VALID_USERNAME}    supervisor
+${VALID_PASSWORD}    supervisor
+${INVALID_USERNAME}    invalid
+${INVALID_PASSWORD}    invalid
+
+
 #{ Variables for html frontend elements }
 ${LOGIN_TITLE}    Sign in to CSX CoreSystem
 ${MAIN_TITLE}    Core System
@@ -26,6 +33,7 @@ ${HOS_CALENDAR_TODAY_ITEM}    div.calendar-item.today.selected
 ${HOS_INPUT_HOUR}    input[name="hour"]
 ${HOS_INPUT_MINUTE}    input[name="minute"]
 ${HOS_DONE_BUTTON}    div.btn-select-date-container >> ix-button:has-text("Done")
+${CLOSE_BUTTON_LOGOFF_WINDOW}    ix-modal-header[ng-reflect-icon="log-out"] >> button[aria-label="Close"]
 
 *** Keywords ***
 

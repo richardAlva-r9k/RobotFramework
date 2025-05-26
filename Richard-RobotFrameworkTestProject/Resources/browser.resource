@@ -28,7 +28,9 @@ Login Page Should Be Loaded
 
 Input Login Valid Credentials
     [Arguments]    ${username}    ${password}
+    Wait For Elements State    ${INPUT_LOGIN_USERNAME}    visible
     Fill Text    ${INPUT_LOGIN_USERNAME}    ${username}
+    Wait For Elements State    ${INPUT_LOGIN_PASSWORD}    visible
     Fill Text    ${INPUT_LOGIN_PASSWORD}    ${password}
     Click    ${INPUT_LOGIN_SUBMIT}
     Role&Position Page Should Be Open    ${MAIN_TITLE}
@@ -69,15 +71,63 @@ Start Logoff
     Click    ${LOGOUT_BUTTON}
 
 Confirm Logoff
+    [Arguments]    ${HOS}
     Start Logoff
-    Wait For Elements State    ${LOGOUT_CONFIRMATION}    visible    
+    Wait For Elements State    ${LOGOUT_CONFIRMATION}    visible
+    IF    ${HOS} == True
+        Open HOS Logoff Window
+        Wait For Elements State    ${INPUT_LOGIN_PASSWORD}    visible
+        Click    ${INPUT_LOGIN_PASSWORD}
+        Fill Text    ${INPUT_LOGIN_PASSWORD}    ${VALID_PASSWORD}           
+        Click    ${INPUT_LOGIN_SUBMIT}
+    ELSE
+        Click    ${LOGOUT_CONFIRMATION}
+    END    
     Login Page Should Be Loaded    ${LOGIN_TITLE}
 
 Cancel Logoff
-    Start Logoff    
-    Wait For Elements State    ${LOGOUT_CANCEL}    visible
-    Click    ${LOGOUT_CANCEL}
-    Main Page Should Be Open    ${MAIN_TITLE}
+    [Arguments]    ${CANCEL_LOGOFF}=True    ${CLOSE_LOGOFF_WINDOW}=False    ${INCORRECT_PASSWORD}=False    ${CLOSE_HOS_LOGOFF_WINDOW}=False    ${HOS}=False
+    Start Logoff
+    IF    ${HOS} == False
+        IF    ${CANCEL_LOGOFF} == True
+            Wait For Elements State    ${LOGOUT_CANCEL}    visible
+            Click    ${LOGOUT_CANCEL}
+            Main Page Should Be Open    ${MAIN_TITLE}
+        ELSE IF    ${CLOSE_LOGOFF_WINDOW} == True
+            Wait For Elements State    ${CLOSE_BUTTON_LOGOFF_WINDOW}    visible
+            Click    ${CLOSE_BUTTON_LOGOFF_WINDOW}
+            Main Page Should Be Open    ${MAIN_TITLE}        
+        ELSE
+            Wait For Elements State    ${LOGOUT_CANCEL}    visible
+            Click    ${LOGOUT_CANCEL}
+            Main Page Should Be Open    ${MAIN_TITLE}
+        END   
+    ELSE
+        IF    ${CANCEL_LOGOFF} == True
+            Wait For Elements State    ${LOGOUT_CANCEL}    visible
+            Click    ${LOGOUT_CANCEL}
+            Main Page Should Be Open    ${MAIN_TITLE}
+        ELSE IF    ${CLOSE_LOGOFF_WINDOW} == True
+            Wait For Elements State    ${CLOSE_BUTTON_LOGOFF_WINDOW}    visible
+            Click    ${CLOSE_BUTTON_LOGOFF_WINDOW}
+            Main Page Should Be Open    ${MAIN_TITLE}
+        ELSE IF    ${INCORRECT_PASSWORD} == True
+            Open HOS Logoff Window
+            Wait For Elements State    ${INPUT_LOGIN_PASSWORD}    visible
+            Click    ${INPUT_LOGIN_PASSWORD}
+            Fill Text    ${INPUT_LOGIN_PASSWORD}    ${INVALID_PASSWORD}           
+            Click    ${INPUT_LOGIN_SUBMIT}
+            Wait For Elements State    span#input-error    visible
+            Close Page
+        ELSE IF    ${CLOSE_HOS_LOGOFF_WINDOW} == True
+            Open HOS Logoff Window
+            Close Page
+        ELSE
+            Wait For Elements State    ${LOGOUT_CANCEL}    visible
+            Click    ${LOGOUT_CANCEL}
+            Main Page Should Be Open    ${MAIN_TITLE}
+        END                   
+    END           
 
 Set Hour Of Service
     Wait For Elements State    ${HOS_CALENDAR_BUTTON}    visible   
@@ -94,4 +144,16 @@ Set Hour Of Service
     Wait For Elements State    ${HOS_INPUT_MINUTE}    visible
     Fill Text    ${HOS_INPUT_MINUTE}    ${minute}
     Wait For Elements State    ${HOS_DONE_BUTTON}     visible
-    Click    ${HOS_DONE_BUTTON} 
+    Click    ${HOS_DONE_BUTTON}
+
+New Page Should Be Open
+    [Arguments]    @{previous_pages}
+    @{current_pages}=    Get Page Ids
+    ${new_page}=        Evaluate    list(set(${current_pages}) - set(${previous_pages}))[0]
+    Run Keyword If    '${new_page}' != 'None'    Switch Page    ${new_page}
+    
+Open HOS Logoff Window
+    @{previous_pages} =    Get Page Ids
+    Click    ${LOGOUT_CONFIRMATION}
+    @{current_pages}=    Get Page Ids
+    Wait Until Keyword Succeeds    10s    1s    New Page Should Be Open    @{previous_pages}
