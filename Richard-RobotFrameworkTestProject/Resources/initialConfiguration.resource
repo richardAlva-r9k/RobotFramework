@@ -1,6 +1,9 @@
 *** Settings ***
+Documentation    This resource contains the initial configuration for the test suite and teardown steps.
+
 Resource    db.resource
 Resource    browser.resource
+Resource    requests.resource
 
 *** Keywords ***
 Set initial configuration

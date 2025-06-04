@@ -1,16 +1,23 @@
+**** Settings ***
+
+Documentation    This resource contains all the variables related to the CSX Application, such as URLs, browser settings, and element selectors.
+
 *** Variables ***
 
 #{ Variables for browser initialization }
 ${LOGIN_URL}    http://127.0.0.1.nip.io/
 ${BROWSER}    Chromium
-${HEADLESS}    false
-${SLOWMO}    0.5
+${HEADLESS}    True
+${SLOWMO}    0
 
 #{ Variables for login credentials }
 ${VALID_USERNAME}    supervisor
 ${VALID_PASSWORD}    supervisor
 ${INVALID_USERNAME}    invalid
 ${INVALID_PASSWORD}    invalid
+
+#{ Variable for user session cookie }
+${USERSESSION_COOKIE_NAME}    CSSID
 
 #{ Variables for html frontend elements }
 ${LOGIN_TITLE}    Sign in to CSX CoreSystem

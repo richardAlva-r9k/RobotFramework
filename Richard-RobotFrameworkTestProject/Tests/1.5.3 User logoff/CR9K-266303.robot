@@ -13,10 +13,10 @@ ${POSITION}    FE
 ${HOS}    True
 
 *** Test Cases ***
-Logoff HOS user type
+Logoff HOS User Type
     Open Login Page    ${LOGIN_URL}
     Input Login Valid Credentials    ${VALID_USERNAME}    ${VALID_PASSWORD}
     Select Role And Position    ${ROLE}    ${POSITION}    ${HOS}
-    Cancel Logoff    HOS=${HOS}    Mode="Incorrect Password Logoff HOS"
-    Cancel Logoff    HOS=${HOS}    Mode="Close HOS Logoff Window"
-    Confirm Logoff    ${HOS}
+    Cancel Logoff    ${HOS}    Mode="Incorrect Password Logoff HOS"
+    Cancel Logoff    ${HOS}    Mode="Close HOS Logoff Window"
+    Logoff    ${HOS}

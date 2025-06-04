@@ -13,9 +13,9 @@ ${POSITION}    Florence
 ${HOS}    False
 
 *** Test Cases ***
-Log off at any time
+Log Off At Any Time
     Open Login Page    ${LOGIN_URL}
     Input Login Valid Credentials    ${VALID_USERNAME}    ${VALID_PASSWORD}
     Select Role And Position    ${ROLE}    ${POSITION}    ${HOS}
-    Confirm Logoff    HOS=${HOS}
+    Logoff    ${HOS}
     

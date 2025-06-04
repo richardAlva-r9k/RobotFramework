@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Verify that the user is able to cancel the logoff process
+Documentation    Verify that on logon the UI stores a cookie received from the backend as a reference to the user session in the backend
 Resource    ../../Resources/initialConfiguration.resource
 Suite Setup   Set initial configuration
 Suite Teardown  Closing Test
@@ -13,9 +13,7 @@ ${POSITION}    Florence
 ${HOS}    False
 
 *** Test Cases ***
-Cancel Logoff Process
+Cookie With Reference To The User Session Stored
     Open Login Page    ${LOGIN_URL}
     Input Login Valid Credentials    ${VALID_USERNAME}    ${VALID_PASSWORD}
-    Select Role And Position    ${ROLE}    ${POSITION}    ${HOS}
-    Cancel Logoff    ${HOS}    Mode="Cancel Logoff Window"
-    Cancel Logoff    ${HOS}    Mode="Close Logoff Window"    
+    Check Usersession Cookie

@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    This resource contains the keywords to access to the database
+Documentation    This resource contains the keywords to access to the databases
 Library           DatabaseLibrary
 Library           OperatingSystem
 Library           Collections
@@ -18,9 +18,7 @@ Check Open Sessions
     ${query}=    Query    SELECT COUNT(*) FROM usersessions WHERE status IS NOT NULL;
     ${count}=    Set Variable    ${query[0][0]}
     IF    ${count} > 0
-        Close Open Sessions
-    ELSE
-        Log To Console   No hay sesiones abiertas        
+        Close Open Sessions      
     END
     
 Close Open Sessions
@@ -29,3 +27,7 @@ Close Open Sessions
 Disconnect Users BBDD
     Execute Sql String    DELETE FROM usersessions;
     Disconnect From Database
+
+Check Usersession Cookie BBDD
+    ${query}=    Query    SELECT session_id FROM usersessions;
+    RETURN    ${query[0][0]}

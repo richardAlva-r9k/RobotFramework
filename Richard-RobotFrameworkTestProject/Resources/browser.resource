@@ -1,12 +1,14 @@
 *** Settings ***
-Documentation    This resource contains the keywords to access to CSX main page and also to log in the user
+Documentation    This resource contains all the keywords related to the browser library which interact with CSX application.
 
 Library    Browser
 Library    OperatingSystem
 Library    Collections
 Library    DateTime
+Library    String
 
 Resource   variables.resource
+Resource   db.resource
 
 *** Keywords ***
 Open Login Page
@@ -41,12 +43,14 @@ Input Username Login/Logoff
     [Arguments]    ${username}
     Wait For Elements State    ${INPUT_LOGIN_USERNAME}    visible
     Click    ${INPUT_LOGIN_USERNAME}
+    Fill Text    ${INPUT_LOGIN_USERNAME}    ${EMPTY}
     Fill Text    ${INPUT_LOGIN_USERNAME}    ${username}
 
 Input Password Login/Logoff
     [Arguments]    ${password}
     Wait For Elements State    ${INPUT_LOGIN_PASSWORD}    visible
     Click    ${INPUT_LOGIN_PASSWORD}
+    Fill Text    ${INPUT_LOGIN_PASSWORD}    ${EMPTY}
     Fill Text    ${INPUT_LOGIN_PASSWORD}    ${password}
 
 Click Submit Button
@@ -95,7 +99,7 @@ Click Logoff Button
     Wait For Elements State    ${LOGOFF_BUTTON}    visible
     Click    ${LOGOFF_BUTTON}
 
-Confirm Logoff
+Logoff
     [Arguments]    ${HOS}
     Click Logoff Button
     Wait For Elements State    ${CONTINUE_LOGOFF}    visible    
@@ -168,7 +172,7 @@ Click Today Item In HOS Calendar
 Get Current Date Hour
     ${current_hour}=    Get Current Date    result_format=%H
     ${hour}=    Convert To Integer    ${current_hour}
-    RETURN    ${current_hour}
+    RETURN    ${hour}
 
 Get Current Date Minute
     ${current_minute}=    Get Current Date    result_format=%M
@@ -197,3 +201,50 @@ Open HOS Logoff Window
     Click    ${CONTINUE_LOGOFF}
     @{current_pages}=    Get Page Ids
     Wait Until Keyword Succeeds    10s    1s    New Page Should Be Open    @{previous_pages}
+
+
+Input Login Incorrect Credentials
+    [Arguments]    ${Mode}="Incorrect Password"
+    Run Keyword If    ${Mode} == "Incorrect Password"    Incorrect Password Login
+    ...    ELSE IF    ${Mode} == "Incorrect Username"    Incorrect Username Login
+
+Incorrect Password Login
+    Input Username Login/Logoff    ${VALID_USERNAME}
+    Input Password Login/Logoff   invalid
+    Click Submit Button
+    Wait For Elements State    span#input-error    visible
+
+Incorrect Username Login
+    Input Username Login/Logoff    invalid
+    Input Password Login/Logoff   ${VALID_PASSWORD}
+    Click Submit Button
+    Wait For Elements State    span#input-error    visible
+
+Check Usersession Cookie
+    ${UserSessionCookie}=   Retrieve Usersession Cookie
+    ${query_result}=    Check Usersession Cookie BBDD
+    Should Be Equal    ${UserSessionCookie}    ${query_result}
+
+Retrieve Usersession Cookie
+    @{cookies}=    Get Cookies
+    FOR    ${cookie}    IN    @{cookies}
+        IF    $cookie["name"] == "CSSID"
+            RETURN    ${cookie}[value]    
+        END
+    END
+
+Delete Usersession Cookie
+    Delete All Cookies
+    Login Page Should Be Loaded    expected_title=${LOGIN_TITLE}
+
+Open Manage User Session Window
+    Click Supervisor Avatar
+    Click Manage Users Sessions
+
+Click Supervisor Avatar
+    Wait For Elements State    button#ix-menu-avatar-id
+    Click    button#ix-menu-avatar-id
+
+Click Manage Users Sessions
+    Wait For Elements State    ix-menu-avatar-item[ng-reflect-label="Manage users sessions"]
+    Click    ix-menu-avatar-item[ng-reflect-label="Manage users sessions"]

@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Verify that the user is able to cancel the logoff process
+Documentation    Verify that the system displays an error message and allows re-entry when an incorrect password is provided.
 Resource    ../../Resources/initialConfiguration.resource
 Suite Setup   Set initial configuration
 Suite Teardown  Closing Test
@@ -13,9 +13,7 @@ ${POSITION}    Florence
 ${HOS}    False
 
 *** Test Cases ***
-Cancel Logoff Process
+Incorrect Password Handling    
     Open Login Page    ${LOGIN_URL}
-    Input Login Valid Credentials    ${VALID_USERNAME}    ${VALID_PASSWORD}
-    Select Role And Position    ${ROLE}    ${POSITION}    ${HOS}
-    Cancel Logoff    ${HOS}    Mode="Cancel Logoff Window"
-    Cancel Logoff    ${HOS}    Mode="Close Logoff Window"    
+    Input Login Incorrect Credentials    Mode="Incorrect Username"
+    Input Login Incorrect Credentials    Mode="Incorrect Password"
