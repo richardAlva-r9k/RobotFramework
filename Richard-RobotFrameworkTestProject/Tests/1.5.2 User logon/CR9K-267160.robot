@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Verify that on logon the UI stores a cookie received from the backend as a reference to the user session in the backend
+Documentation    Verify that the UI sends the user session cookie next to every request to the backend. if not received, then the user management subsystem shall automatically redirect to login page.
 Resource    ../../Resources/initialConfiguration.resource
 Suite Setup   Set initial configuration
 Suite Teardown  Closing Test
@@ -13,7 +13,10 @@ ${POSITION}    Florence
 ${HOS}    False
 
 *** Test Cases ***
-Cookie With Reference To The User Session Stored
+Authorization with user cookie
     Open Login Page    ${LOGIN_URL}
     Input Login Valid Credentials    ${VALID_USERNAME}    ${VALID_PASSWORD}
-    Check Usersession Cookie
+    API Get all existing users - 200 Response
+    API Get all existing users - 401 Error
+    Delete Usersession Cookie
+

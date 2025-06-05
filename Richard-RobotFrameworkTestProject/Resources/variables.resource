@@ -30,7 +30,7 @@ ${INPUT_LOGIN_SUBMIT}    input#kc-login
 ${IX-BLIND_ROLE&POSITION}    ix-blind.rootPane.blind-outline.hydrated
 ${IX-SELECT_ROLE}    ix-select >> nth=0
 ${IX-SELECT_POSITION}    ix-select >> nth=1
-${START_SESSION_BUTTON}    text="Start session"
+${START_SESSION_BUTTON}    text="Start new session"
 ${LOGOFF_BUTTON}    ix-menu-item[label="Logout"]
 ${CONTINUE_LOGOFF}    text=" Continue"
 ${LOGOUT_CANCEL}    text=" Cancel"

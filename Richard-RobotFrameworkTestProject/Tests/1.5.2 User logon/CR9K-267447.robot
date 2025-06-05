@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Verify that on logon the UI stores a cookie received from the backend as a reference to the user session in the backend
+Documentation    Verify that the UI shall periodically ask backend about user information, including permissions, to check the user session is valid
 Resource    ../../Resources/initialConfiguration.resource
 Suite Setup   Set initial configuration
 Suite Teardown  Closing Test
@@ -13,7 +13,8 @@ ${POSITION}    Florence
 ${HOS}    False
 
 *** Test Cases ***
-Cookie With Reference To The User Session Stored
+UI periodically asks information about user permissions
     Open Login Page    ${LOGIN_URL}
     Input Login Valid Credentials    ${VALID_USERNAME}    ${VALID_PASSWORD}
-    Check Usersession Cookie
+    Select Role And Position    ${ROLE}    ${POSITION}    ${HOS}
+    Check API Session Request

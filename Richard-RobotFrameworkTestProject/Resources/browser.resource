@@ -223,6 +223,7 @@ Incorrect Username Login
 Check Usersession Cookie
     ${UserSessionCookie}=   Retrieve Usersession Cookie
     ${query_result}=    Check Usersession Cookie BBDD
+    Log To Console    UserSessionCookie: ${UserSessionCookie}
     Should Be Equal    ${UserSessionCookie}    ${query_result}
 
 Retrieve Usersession Cookie
@@ -248,3 +249,9 @@ Click Supervisor Avatar
 Click Manage Users Sessions
     Wait For Elements State    ix-menu-avatar-item[ng-reflect-label="Manage users sessions"]
     Click    ix-menu-avatar-item[ng-reflect-label="Manage users sessions"]
+
+Check API Session Request
+    ${request}=    Wait For Request    matcher=http://127.0.0.1.nip.io/usrmgr/sessions/session?tz=Europe%2FBerlin    timeout=30s
+    Log To Console  ${request}
+    ${response}=    Wait For Response    matcher=http://127.0.0.1.nip.io/usrmgr/sessions/session?tz=Europe%2FBerlin   timeout=15s
+    Log To Console    Request URL: ${response}  
